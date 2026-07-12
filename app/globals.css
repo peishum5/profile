@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  /* modern-editorial palette — warm paper, deep ink, single restrained accent */
+  --paper: #f4f1ea;
+  --paper-deep: #eae5da;
+  --ink: #1a1714;
+  --ink-soft: #514b42;
+  --ink-faint: #7a7469;
+  --line: #d9d3c7;
+  --accent: #b0442c; /* editorial vermilion */
+  --accent-ink: #7c2e1d;
+
+  /* font stacks — defined as real custom properties so both Tailwind utilities
+     (via @theme inline) and the hand-written classes below resolve them.
+     --font-instrument / --font-shippori / --font-zen-kaku are injected by
+     next/font on <body>. */
+  --stack-display: var(--font-instrument), var(--font-shippori), Georgia, serif;
+  --stack-serif: var(--font-shippori), Georgia, serif;
+  --stack-sans: var(--font-zen-kaku), system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-display: var(--stack-display);
+  --font-serif: var(--stack-serif);
+  --font-sans: var(--stack-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--stack-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+/* editorial helpers */
+.display {
+  font-family: var(--stack-display);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+/* Japanese display headings read best in the mincho serif rather than the
+   Latin serif's fallback. */
+.display-ja {
+  font-family: var(--stack-serif);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow {
+  font-family: var(--stack-sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Japanese text: allow natural per-character wrapping but apply strict kinsoku
+   (no long-vowel mark / small kana at line start) and never overflow. NOTE:
+   word-break:keep-all is intentionally NOT used — it blocks CJK wrapping and
+   causes overflow on narrow columns. */
+.jp-wrap {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* proportional-alternate metrics tighten wide CJK punctuation in large display
+   quotes */
+.jp-palt {
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
