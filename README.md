@@ -30,5 +30,10 @@ npm run build    # 本番ビルド確認
 `public/` に顔写真・作品サムネイルを置き、該当コンポーネント（`components/About.tsx`, `components/Works.tsx`）の
 プレースホルダー枠を `next/image` に差し替える。
 
-## デプロイ
-GitHub push → Vercel が preview を自動生成 → 確認後に本番反映。
+## 公開（GitHub Pages）
+- 公開URL: **https://peishum5.github.io/profile/**
+- `main` に push すると GitHub Actions（`.github/workflows/deploy.yml`）が
+  静的書き出し（`GITHUB_PAGES=true npm run build` → `out/`）を行い、自動でPagesに反映。
+- サブパス `/profile/` 配下で配信するため、`next.config.ts` で `basePath` を設定している
+  （ローカル `npm run dev` は basePath なしのまま）。
+- ローカルで本番と同じ静的書き出しを確認: `GITHUB_PAGES=true npm run build`（`out/` を生成）。
