@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // Latin editorial display serif — layered over Shippori for Japanese glyphs.
@@ -54,10 +53,7 @@ export default function RootLayout({
       lang="ja"
       className={`${instrument.variable} ${shippori.variable} ${zenKaku.variable}`}
     >
-      <body>
-        {children}
-        <Analytics />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
