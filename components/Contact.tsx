@@ -13,7 +13,7 @@ export default function Contact({ lang }: { lang: Lang }) {
           <div className="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow mb-4">
-                <span className="text-accent">07</span>
+                <span className="text-accent">08</span>
                 <span className="mx-2 text-line">/</span>
                 Contact
               </p>

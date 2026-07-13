@@ -9,6 +9,7 @@ const sections = [
   "capabilities",
   "research",
   "works",
+  "talks",
   "magic",
   "cv",
   "contact",

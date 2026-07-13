@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Capabilities from "@/components/Capabilities";
 import Research from "@/components/Research";
 import Works from "@/components/Works";
+import Talks from "@/components/Talks";
 import Magic from "@/components/Magic";
 import CV from "@/components/CV";
 import Contact from "@/components/Contact";
@@ -29,6 +30,7 @@ export default async function Page({
         <Capabilities lang={lang} />
         <Research lang={lang} />
         <Works lang={lang} />
+        <Talks lang={lang} />
         <Magic lang={lang} />
         <CV lang={lang} />
         <Contact lang={lang} />

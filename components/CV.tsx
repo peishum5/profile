@@ -19,7 +19,7 @@ export default function CV({ lang }: { lang: Lang }) {
   return (
     <Section
       id="cv"
-      index="06"
+      index="07"
       eyebrow="Curriculum Vitae"
       heading={site.cv.heading[lang]}
       lead={site.cv.lead[lang]}

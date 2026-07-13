@@ -237,56 +237,74 @@ export const site = {
   },
 
   // --- Works 成果物 -----------------------------------------------------------
+  // 趣味の制作物・作ったものを入れる箱。1件 = カード1枚。
+  // 追記は items に { year, title, category, summary, link? } を足すだけ。
+  //   category は自由記入のタグ（例: 趣味 / Web / プロダクト / ツール）。
+  //   link を入れると「詳しく↗」リンクになります。thumb 画像は後日差し替え。
   works: {
     heading: { ja: "成果物", en: "Works" },
     lead: {
-      ja: "作ってきたもの ── プロダクト、Webサイト、ツール、制作物。", // ⚠
-      en: "Things I've built — products, websites, tools, and creations.",
+      ja: "仕事・趣味を問わず、これまで作ってきたもの。Webサイト、プロダクト、ツール、実験的な制作物など。",
+      en: "Things I've made — for work and for fun: websites, products, tools, and experiments.",
     },
     items: [
       {
-        year: "20XX",
-        title: { ja: "作品 1（仮）", en: "Work 1 (placeholder)" },
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
+        category: { ja: "趣味", en: "Hobby" },
+        summary: {
+          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
+          en: "One or two lines: what it is, why you made it, and how.",
+        },
+        link: undefined,
+      },
+      {
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
         category: { ja: "Web", en: "Web" },
-        summary: { ja: "概要を1〜2行で。何を・なぜ作ったか。", en: "One or two lines: what it is and why." },
+        summary: {
+          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
+          en: "One or two lines: what it is, why you made it, and how.",
+        },
         link: undefined,
       },
       {
-        year: "20XX",
-        title: { ja: "作品 2（仮）", en: "Work 2 (placeholder)" },
-        category: { ja: "プロダクト", en: "Product" },
-        summary: { ja: "概要を1〜2行で。何を・なぜ作ったか。", en: "One or two lines: what it is and why." },
-        link: undefined,
-      },
-      {
-        year: "20XX",
-        title: { ja: "作品 3（仮）", en: "Work 3 (placeholder)" },
-        category: { ja: "研究ツール", en: "Research Tool" },
-        summary: { ja: "概要を1〜2行で。何を・なぜ作ったか。", en: "One or two lines: what it is and why." },
-        link: undefined,
-      },
-      {
-        year: "20XX",
-        title: { ja: "作品 4（仮）", en: "Work 4 (placeholder)" },
-        category: { ja: "実験", en: "Experiment" },
-        summary: { ja: "概要を1〜2行で。何を・なぜ作ったか。", en: "One or two lines: what it is and why." },
-        link: undefined,
-      },
-      {
-        year: "20XX",
-        title: { ja: "作品 5（仮）", en: "Work 5 (placeholder)" },
-        category: { ja: "Web", en: "Web" },
-        summary: { ja: "概要を1〜2行で。何を・なぜ作ったか。", en: "One or two lines: what it is and why." },
-        link: undefined,
-      },
-      {
-        year: "20XX",
-        title: { ja: "作品 6（仮）", en: "Work 6 (placeholder)" },
-        category: { ja: "プロダクト", en: "Product" },
-        summary: { ja: "概要を1〜2行で。何を・なぜ作ったか。", en: "One or two lines: what it is and why." },
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
+        category: { ja: "ツール", en: "Tool" },
+        summary: {
+          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
+          en: "One or two lines: what it is, why you made it, and how.",
+        },
         link: undefined,
       },
     ] as WorkItem[],
+  },
+
+  // --- Talks 発表したもの -----------------------------------------------------
+  // 登壇・発表・掲載・出演・公開したものを入れる箱（学術論文は「研究」に掲載済み）。
+  // 追記は items に { year, title, venue, role, link? } を足すだけ。
+  //   role は種別タグ（例: 登壇 / 掲載 / 出演 / 公開）。
+  talks: {
+    heading: { ja: "発表・掲載", en: "Talks & Features" },
+    lead: {
+      ja: "登壇・発表・メディア掲載・出演など、外に向けて出したもの。",
+      en: "Talks, presentations, media features, and appearances.",
+    },
+    items: [
+      {
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（登壇・発表を追加）", en: "(Add a talk or presentation)" },
+        venue: { ja: "イベント名・場所", en: "Event / venue" },
+        role: { ja: "登壇", en: "Talk" },
+      },
+      {
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（掲載・出演を追加）", en: "(Add a feature or appearance)" },
+        venue: { ja: "媒体名・番組名", en: "Media / program" },
+        role: { ja: "掲載", en: "Feature" },
+      },
+    ] as PubItem[],
   },
 
   // --- Magic マジック実績 -----------------------------------------------------
@@ -401,6 +419,7 @@ export const site = {
       capabilities: { ja: "できること", en: "Capabilities" },
       research: { ja: "研究", en: "Research" },
       works: { ja: "成果物", en: "Works" },
+      talks: { ja: "発表", en: "Talks" },
       magic: { ja: "マジック", en: "Magic" },
       cv: { ja: "経歴", en: "CV" },
       contact: { ja: "連絡先", en: "Contact" },

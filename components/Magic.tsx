@@ -10,7 +10,7 @@ export default function Magic({ lang }: { lang: Lang }) {
   return (
     <Section
       id="magic"
-      index="05"
+      index="06"
       eyebrow="Magic"
       heading={site.magic.heading[lang]}
       lead={site.magic.lead[lang]}
