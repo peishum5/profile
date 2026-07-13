@@ -49,6 +49,15 @@ export type CapabilityItem = {
   summary: L10n;
 };
 
+// 追加の論文・発表（共著・学会発表など、ハイライト以外）
+export type PubItem = {
+  year: string;
+  title: L10n;
+  venue: L10n;
+  role: L10n; // 筆頭著者 / 共著 / 発表 など
+  link?: string;
+};
+
 export const site = {
   // --- 基本情報 ---------------------------------------------------------------
   name: { ja: "名越 俊平", en: "Shumpei Nagoshi" },
@@ -117,16 +126,23 @@ export const site = {
       ja: "京都大学での天体物理学の研究。クエーサー（活動銀河核）の明るさの変動を手がかりに、その構造と成長の歴史に迫ってきました。",
       en: "Astrophysics research at Kyoto University — using the brightness variations of quasars (active galactic nuclei) to probe their structure and growth history.",
     },
+    // 主要な研究指標（Google Scholar より）
+    scholar: {
+      url: "https://scholar.google.com/citations?hl=en&user=SS8boIUAAAAJ",
+      citations: 58,
+      hIndex: 4,
+      i10: 3,
+    },
     items: [
       {
-        year: "2023",
+        year: "2024",
         title: {
           ja: "極端変光クエーサーの残響法による広輝線領域の二成分構造の起源の解明",
           en: "Probing the origin of the two-component structure of the broad-line region by reverberation mapping of an extremely variable quasar",
         },
         venue: {
-          ja: "Monthly Notices of the Royal Astronomical Society（MNRAS）／ 筆頭著者",
-          en: "Monthly Notices of the Royal Astronomical Society (MNRAS) / First author",
+          ja: "Monthly Notices of the Royal Astronomical Society（MNRAS 529, 393–408）／ 筆頭著者",
+          en: "Monthly Notices of the Royal Astronomical Society (MNRAS 529, 393–408) / First author",
         },
         summary: {
           ja: "極端に変光するクエーサーの残響マッピング（reverberation mapping）を行い、Hβ輝線が二つの成分から成ること、暗い時期には二重ピーク、明るい時期には単一ピーク成分が現れることを発見。広輝線領域の構造の起源に迫った。",
@@ -141,8 +157,8 @@ export const site = {
           en: "The relation between quasars' optical spectra and variability",
         },
         venue: {
-          ja: "Publications of the Astronomical Society of Japan（PASJ）／ 筆頭著者",
-          en: "Publications of the Astronomical Society of Japan (PASJ) / First author",
+          ja: "Publications of the Astronomical Society of Japan（PASJ 74, 1198–1208）／ 筆頭著者",
+          en: "Publications of the Astronomical Society of Japan (PASJ 74, 1198–1208) / First author",
         },
         summary: {
           ja: "約1万天体のスペクトルを解析し、鉄・酸素の輝線強度が後の明るさ変化を予測する因子であることを発見。輝線強度と明るさが長期的に相関を保ちながら変化することを示し、クエーサーの質量獲得の歴史を知る手がかりを得た。",
@@ -157,8 +173,8 @@ export const site = {
           en: "Discovery of a new extreme changing-state quasar with 4 mag variation, SDSS J125809.31+351943.0",
         },
         venue: {
-          ja: "Publications of the Astronomical Society of Japan（PASJ）／ 筆頭著者",
-          en: "Publications of the Astronomical Society of Japan (PASJ) / First author",
+          ja: "Publications of the Astronomical Society of Japan（PASJ 73, 122–131）／ 筆頭著者",
+          en: "Publications of the Astronomical Society of Japan (PASJ 73, 122–131) / First author",
         },
         summary: {
           ja: "1983年から2015年にかけて可視光で約4等級も増光した、極端に変光するクエーサーを発見。クエーサーの「状態遷移」を捉えた稀有な例で、その後の変光研究の起点となった。",
@@ -167,6 +183,57 @@ export const site = {
         link: "https://arxiv.org/abs/2011.01127",
       },
     ] as ResearchItem[],
+    // その他の論文・共著・学会発表（全業績は上記 Google Scholar を参照）
+    more: [
+      {
+        year: "2023",
+        title: {
+          ja: "残響法と多波長観測による広輝線領域の起源の探究（招待講演）",
+          en: "Probing the origin of the broad-line region by reverberation mapping and multi-wavelength observations",
+        },
+        venue: {
+          ja: "European Astronomical Society Annual Meeting 2023",
+          en: "European Astronomical Society Annual Meeting (EAS 2023)",
+        },
+        role: { ja: "口頭発表", en: "Talk" },
+      },
+      {
+        year: "2021",
+        title: {
+          ja: "新たな changing-look クエーサー 3C 332 の発見",
+          en: "Discovery of a new changing-look quasar 3C 332",
+        },
+        venue: {
+          ja: "Publications of the Astronomical Society of Japan（PASJ 73, 596–608）",
+          en: "Publications of the Astronomical Society of Japan (PASJ 73, 596–608)",
+        },
+        role: { ja: "共著", en: "Co-author" },
+      },
+      {
+        year: "2021",
+        title: {
+          ja: "矮新星のスーパーアウトバーストの分光・測光観測",
+          en: "Spectroscopic and photometric observations of dwarf nova superoutbursts",
+        },
+        venue: {
+          ja: "Publications of the Astronomical Society of Japan（PASJ 73, 753–771）",
+          en: "Publications of the Astronomical Society of Japan (PASJ 73, 753–771)",
+        },
+        role: { ja: "共著", en: "Co-author" },
+      },
+      {
+        year: "2020",
+        title: {
+          ja: "突発天体 TCP J20034647+1335125 の矮新星としての分光同定",
+          en: "Spectroscopic identification of the transient TCP J20034647+1335125 as a dwarf nova",
+        },
+        venue: {
+          ja: "The Astronomer's Telegram 13947",
+          en: "The Astronomer's Telegram 13947",
+        },
+        role: { ja: "共著", en: "Co-author" },
+      },
+    ] as PubItem[],
   },
 
   // --- Works 成果物 -----------------------------------------------------------
@@ -260,36 +327,52 @@ export const site = {
   },
 
   // --- CV 経歴 ----------------------------------------------------------------
+  // 「整理してまとめる箱」。学歴 / 職歴 / 受賞 の3カテゴリに分けて表示されます。
+  // 追記するときは items に { year, title, detail, kind } を足すだけ。
+  //   kind は "education" | "career" | "award" のいずれか。
+  //   年の新しい順に自動で並びます。空欄・下書きは ⚠ を目印にしています。
   cv: {
     heading: { ja: "経歴", en: "Curriculum Vitae" },
     lead: {
-      ja: "学歴・職歴・受賞のあゆみ。", // ⚠
-      en: "Education, career, and awards.",
+      ja: "学歴・職歴・受賞をここにまとめていきます。",
+      en: "Education, career, and awards, compiled here.",
     },
     items: [
+      // --- 学歴 education ---
       {
-        year: "20XX",
-        title: { ja: "学歴（仮）", en: "Education (placeholder)" },
-        detail: { ja: "学校名・専攻など", en: "Institution, major, etc." },
+        year: "2023", // ⚠ 修了年を確認してください
+        title: { ja: "京都大学 大学院理学研究科 博士課程 修了", en: "Ph.D., Graduate School of Science, Kyoto University" },
+        detail: {
+          ja: "宇宙物理学専攻。博士（理学）。クエーサーの変光に関する研究。", // ⚠ 学位・専攻の表記を確認
+          en: "Astrophysics. Ph.D. in Science. Research on quasar variability.",
+        },
         kind: "education",
       },
       {
-        year: "20XX",
-        title: { ja: "職歴（仮）", en: "Career (placeholder)" },
-        detail: { ja: "所属・役割など", en: "Organization, role, etc." },
+        year: "20XX", // ⚠ 記入：学部・修士など
+        title: { ja: "（学歴を追加）", en: "(Add education)" },
+        detail: { ja: "学校名・学部・専攻など", en: "Institution, faculty, major, etc." },
+        kind: "education",
+      },
+      // --- 職歴 career ---
+      {
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（職歴を追加）", en: "(Add a role)" },
+        detail: { ja: "所属・役職・担当した仕事", en: "Organization, role, responsibilities" },
         kind: "career",
       },
       {
-        year: "20XX",
-        title: { ja: "受賞（仮）", en: "Award (placeholder)" },
-        detail: { ja: "賞の名称など", en: "Name of the award, etc." },
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（職歴を追加）", en: "(Add a role)" },
+        detail: { ja: "所属・役職・担当した仕事", en: "Organization, role, responsibilities" },
+        kind: "career",
+      },
+      // --- 受賞・助成 award ---
+      {
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（受賞・助成を追加）", en: "(Add an award or grant)" },
+        detail: { ja: "賞・助成の名称、主催", en: "Name of award/grant, organizer" },
         kind: "award",
-      },
-      {
-        year: "20XX",
-        title: { ja: "職歴（仮）", en: "Career (placeholder)" },
-        detail: { ja: "所属・役割など", en: "Organization, role, etc." },
-        kind: "career",
       },
     ] as CVItem[],
   },
