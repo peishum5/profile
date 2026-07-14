@@ -46,12 +46,13 @@ export default function Works({ lang }: { lang: Lang }) {
         </p>
       </Reveal>
       <div>
+        {/* 論文は原題（英語）で表示。掲載誌・役割などの補足はローカライズ */}
         {site.research.items.map((item, i) => (
           <Entry
             key={`r${i}`}
             delay={i * 0.03}
             label={item.year}
-            title={item.title[lang]}
+            title={item.title.en}
             href={item.link}
             meta={item.venue[lang]}
             body={item.summary[lang]}
@@ -61,7 +62,7 @@ export default function Works({ lang }: { lang: Lang }) {
           <Entry
             key={`m${i}`}
             label={p.year}
-            title={p.title[lang]}
+            title={p.title.en}
             href={p.link}
             meta={`${p.venue[lang]} ・ ${p.role[lang]}`}
           />
