@@ -38,7 +38,6 @@ export default function Works({ lang }: { lang: Lang }) {
   const { scholar } = site.research;
   const service = site.works.items.filter((w) => w.group === "service");
   const quote = site.magic.quote;
-  const assetPrefix = process.env.GITHUB_PAGES === "true" ? "/profile" : "";
 
   const scholarMeta = (
     <span className="tabular-nums">
@@ -107,22 +106,6 @@ export default function Works({ lang }: { lang: Lang }) {
 
       {/* マジック */}
       <GroupHeading index="03.2" label={site.workGroupLabel.magic[lang]} />
-      <Reveal variant="fade">
-        <figure className="mb-8 mt-2">
-          <div className="border border-line bg-paper-deep p-1.5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${assetPrefix}/magic-live.jpg`}
-              alt={
-                lang === "ja"
-                  ? "夜の街頭でパフォーマンスをする名越俊平"
-                  : "Shumpei Nagoshi performing on the street at night"
-              }
-              className="block w-full [filter:grayscale(0.08)_contrast(1.03)]"
-            />
-          </div>
-        </figure>
-      </Reveal>
       {quote && (
         <Reveal variant="fade">
           <blockquote className="relative mt-2 mb-10 pl-9 md:pl-14">
