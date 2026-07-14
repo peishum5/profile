@@ -80,7 +80,7 @@ export const site = {
     en: "Researcher / Maker / Magician",
   },
   intro: {
-    ja: "京都大学大学院で天体物理学を研究し、査読論文を筆頭著者として発表。その分析的な進め方を土台に、Webサイトやコンテンツの制作、マジックによる表現に取り組んでいます。",
+    ja: "京都大学大学院で宇宙物理学を研究し、査読論文を筆頭著者として発表。その分析的な進め方を土台に、Webサイトやコンテンツの制作、マジックによる表現に取り組んでいます。",
     en: "I studied astrophysics at the Kyoto University Graduate School and published peer-reviewed papers as first author. I bring that same analytical approach to web and content production, and to performance as a magician.",
   },
 
@@ -88,19 +88,19 @@ export const site = {
   about: {
     heading: { ja: "プロフィール", en: "Profile" },
     body: {
-      ja: "京都大学大学院で天体物理学（クエーサーの変光）を研究し、大規模な観測データの解析をもとに複数の査読論文を筆頭著者として発表してきました。数字と根拠にもとづいて考え、複雑なものを整理して伝わる形にすることを大切にしています。現在は、その姿勢を土台に、Webサイトやコンテンツの制作、マジックを用いた表現・場づくりに携わっています。", // ⚠ 事実に基づく下書き。適宜調整してください
-      en: "At the Kyoto University Graduate School I researched astrophysics — the variability of quasars — publishing several peer-reviewed papers as first author from the analysis of large observational datasets. I work from evidence and numbers, and value turning complex material into a clear, communicable form. Today I apply that approach to web and content production, and to performance and events as a magician.",
+      ja: "京都大学大学院で宇宙物理学（超巨大ブラックホールの光度変動）を研究し、大規模な観測データの解析をもとに複数の査読論文を筆頭著者として発表してきました。数字と根拠にもとづいて考え、複雑なものを整理して伝わる形にすることを大切にしています。現在は、その姿勢を土台に、Webサイトやコンテンツの制作、マジックを用いた表現・場づくりに携わっています。",
+      en: "At the Kyoto University Graduate School I researched astrophysics — the luminosity variations of supermassive black holes — publishing several peer-reviewed papers as first author from the analysis of large observational datasets. I work from evidence and numbers, and value turning complex material into a clear, communicable form. Today I apply that approach to web and content production, and to performance and events as a magician.",
     },
     // 自己紹介（趣味・出身・人となり）。⚠ 事実に基づく下書き。ご自身の言葉で自由に書き換えてください。
     personal: {
-      ja: "鹿児島生まれ。幼稚園の4年間をインドネシア・スラバヤで、小学校の3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、一年の浪人を経て京都大学へ。大学院では天体物理学を研究し、北京・中国科学院への短期留学や海外での学会発表も経験しました。いまは生成AIを毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
+      ja: "鹿児島生まれ。幼稚園の4年間をインドネシア・スラバヤで、小学校の3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、一年の浪人を経て京都大学へ。大学院では宇宙物理学を研究し、北京・中国科学院への短期留学や海外での学会発表も経験しました。いまは生成AIを毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
       en: "Born in Kagoshima. I spent four years of early childhood in Surabaya, Indonesia, and three primary-school years on a remote island so small there were no classmates my age. From junior high I attended La Salle, then entered Kyoto University after a year of exam preparation. In graduate school I researched astrophysics, with a short research stay at the Chinese Academy of Sciences in Beijing and talks at international conferences. These days I use generative AI almost daily while following my curiosity across magic, travel, and making things. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
     },
     // 箇条書きの「一言でわかる」ハイライト
     facts: [
       { ja: "拠点 — 京都", en: "Based in — Kyoto" },
       { ja: "出身 — 鹿児島県", en: "From — Kagoshima, Japan" },
-      { ja: "専門 — 天体物理学（博士）", en: "Field — Astrophysics (PhD)" },
+      { ja: "専門 — 宇宙物理学（博士）", en: "Field — Astrophysics (PhD)" },
       { ja: "言語 — 日本語・英語", en: "Languages — Japanese, English" },
       { ja: "趣味 — マジック・旅・ものづくり", en: "Interests — Magic, travel, making things" },
     ] as L10n[],
@@ -132,8 +132,8 @@ export const site = {
       {
         title: { ja: "リサーチ・データ分析", en: "Research & Data Analysis" },
         summary: {
-          ja: "大規模データの収集・解析と、結果を根拠とともに分かりやすくまとめること。査読論文で培った定量的な手法を用います。",
-          en: "Collecting and analyzing large datasets, then summarizing the findings clearly and with evidence, using quantitative methods honed through peer-reviewed research.",
+          ja: "大規模データの収集・解析と、結果を根拠とともに分かりやすくまとめること。時間軸天文学で培った時系列データの解析や、画像認識も扱います。",
+          en: "Collecting and analyzing large datasets and communicating findings with evidence — including time-series analysis and image recognition honed in time-domain astronomy.",
         },
       },
       {
@@ -157,7 +157,7 @@ export const site = {
   research: {
     heading: { ja: "研究成果", en: "Research" },
     lead: {
-      ja: "京都大学での天体物理学の研究。クエーサー（活動銀河核）の明るさの変動を手がかりに、その構造と成長の歴史に迫ってきました。",
+      ja: "京都大学での宇宙物理学の研究。クエーサー（活動銀河核）の明るさの変動を手がかりに、その構造と成長の歴史に迫ってきました。",
       en: "Astrophysics research at Kyoto University — using the brightness variations of quasars (active galactic nuclei) to probe their structure and growth history.",
     },
     // 主要な研究指標（Google Scholar より）
@@ -301,8 +301,8 @@ export const site = {
   works: {
     heading: { ja: "成果物", en: "Works" },
     lead: {
-      ja: "これまでの成果を、研究・マジック・サービス・その他に分けてまとめています。",
-      en: "My output, grouped into research, magic, services, and other.",
+      ja: "これまでの成果を、研究・マジック・サービスに分けてまとめています。",
+      en: "My output, grouped into research, magic, and services.",
     },
     items: [
       // --- サービス service（運営中の事業・提供中のサービス） ---
@@ -361,16 +361,16 @@ export const site = {
         },
         link: "https://hazecoffee.sub.jp",
       },
-      // --- その他 other ---
       {
-        group: "other" as WorkGroup,
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "Magic Bar ENCORE", en: "Magic Bar ENCORE" },
+        meta: { ja: "ARG", en: "ARG" },
         summary: {
-          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
-          en: "One or two lines: what it is, why you made it, and how.",
+          ja: "マジックバーの公式サイトを辿りながら真相に迫る、探索型のWeb ARG（代替現実ゲーム）。",
+          en: "An exploration-based web ARG — follow a magic bar's site, piece together the clues, and uncover the truth.",
         },
-        link: undefined,
+        link: "https://note.com/ryutaro_akashi/n/n4a9c16afc7d2",
       },
     ] as WorkItem[],
   },
@@ -429,8 +429,8 @@ export const site = {
         year: "2024", // 博士課程 修了（PDが2024年4月開始のため2024年3月修了）
         title: { ja: "京都大学 大学院理学研究科 博士課程 修了", en: "Ph.D., Graduate School of Science, Kyoto University" },
         detail: {
-          ja: "博士（理学）。宇宙物理学（クエーサーの変光に関する研究）。",
-          en: "Ph.D. in Science. Astrophysics — research on quasar variability.",
+          ja: "博士（理学）。宇宙物理学（超巨大ブラックホールの光度変動に関する研究）。",
+          en: "Ph.D. in Science. Astrophysics — research on the luminosity variations of supermassive black holes.",
         },
         kind: "education",
       },
@@ -460,7 +460,7 @@ export const site = {
           en: "JSPS Research Fellow (PD), Graduate School of Science, Kyoto University",
         },
         detail: {
-          ja: "2024年4月〜2025年3月。天体物理学の研究に従事。",
+          ja: "2024年4月〜2025年3月。宇宙物理学の研究に従事。",
           en: "Apr 2024 – Mar 2025. Research in astrophysics.",
         },
         kind: "career",
@@ -484,7 +484,7 @@ export const site = {
           en: "Visiting research, Chinese Academy of Sciences (Beijing)",
         },
         detail: {
-          ja: "約2ヶ月の短期留学。天体物理の共同研究に従事。",
+          ja: "約2ヶ月の短期留学。宇宙物理の共同研究に従事。",
           en: "A two-month research stay in astrophysics.",
         },
         kind: "career",

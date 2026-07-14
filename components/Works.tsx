@@ -18,7 +18,6 @@ function GroupHeading({ label, first }: { label: string; first?: boolean }) {
 export default function Works({ lang }: { lang: Lang }) {
   const { scholar } = site.research;
   const service = site.works.items.filter((w) => w.group === "service");
-  const other = site.works.items.filter((w) => w.group === "other");
 
   return (
     <Section
@@ -101,21 +100,6 @@ export default function Works({ lang }: { lang: Lang }) {
             key={`s${i}`}
             delay={i * 0.03}
             label={item.meta ? item.meta[lang] : item.year}
-            title={item.title[lang]}
-            href={item.link}
-            body={item.summary[lang]}
-          />
-        ))}
-      </div>
-
-      {/* その他 */}
-      <GroupHeading label={site.workGroupLabel.other[lang]} />
-      <div>
-        {other.map((item, i) => (
-          <Entry
-            key={`o${i}`}
-            delay={i * 0.03}
-            label={item.year}
             title={item.title[lang]}
             href={item.link}
             body={item.summary[lang]}
