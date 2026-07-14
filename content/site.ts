@@ -549,10 +549,6 @@ export const site = {
     },
     viewMore: { ja: "詳しく", en: "View" },
     scroll: { ja: "スクロール", en: "Scroll" },
-    placeholderNote: {
-      ja: "※ 一部の実績・経歴・画像は準備中です。",
-      en: "Some works, CV entries, and images are being prepared.",
-    },
   },
 
   cvKindLabel: {

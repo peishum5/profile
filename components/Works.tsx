@@ -25,6 +25,7 @@ export default function Works({ lang }: { lang: Lang }) {
       index="03"
       eyebrow="Works"
       heading={site.works.heading[lang]}
+      lang={lang}
     >
       {/* 研究 */}
       <GroupHeading label={site.workGroupLabel.research[lang]} first />

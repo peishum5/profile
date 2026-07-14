@@ -57,9 +57,9 @@ export default function Hero({ lang }: { lang: Lang }) {
 
         {/* name — vertically centered in the remaining space */}
         <div className="my-auto">
-          <h1 className="display text-ink">
+          <h1 className="text-ink">
             <motion.span
-              className="block text-[clamp(2.4rem,7vw,5.5rem)]"
+              className={`${lang === "ja" ? "display-ja" : "display"} block text-[clamp(2.4rem,7vw,5.5rem)]`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.05, ease }}
@@ -67,7 +67,7 @@ export default function Hero({ lang }: { lang: Lang }) {
               {lang === "ja" ? "名越 俊平" : "Shumpei"}
             </motion.span>
             <motion.span
-              className="mt-1 block text-[clamp(1.9rem,5.2vw,4rem)] italic text-accent md:-mt-1"
+              className="display mt-1 block text-[clamp(1.9rem,5.2vw,4rem)] italic text-accent md:-mt-1"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.16, ease }}

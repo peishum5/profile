@@ -1,7 +1,9 @@
 import Reveal from "@/components/Reveal";
 
 /** One list entry, CV-style: a short label on the left (year or tag), and the
- *  title + supporting text stacked on the right. One item per row. */
+ *  title + supporting text stacked on the right. One item per row.
+ *  The label stays quiet (faint tabular figures) so vermilion is reserved for
+ *  interaction and the few deliberate accent moments. */
 export default function Entry({
   label,
   title,
@@ -22,9 +24,11 @@ export default function Entry({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent md:text-xl"
+      className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent focus-visible:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-xl"
     >
-      {title}
+      <span className="underline decoration-transparent decoration-1 underline-offset-4 transition-colors group-hover:decoration-accent/40">
+        {title}
+      </span>
       <span className="text-accent">↗</span>
     </a>
   ) : (
@@ -34,7 +38,7 @@ export default function Entry({
   return (
     <Reveal delay={delay}>
       <div className="grid gap-1 border-t border-line py-6 md:grid-cols-[8rem_1fr] md:gap-8">
-        <div className="font-serif text-base text-accent md:pt-1 md:text-lg">
+        <div className="text-sm tracking-wide text-ink-faint tabular-nums md:pt-1.5">
           {label}
         </div>
         <div>

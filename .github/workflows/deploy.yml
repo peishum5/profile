@@ -31,6 +31,9 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          # Absolute production URL so metadataBase (OG/canonical URLs)
+          # resolves correctly in the static export.
+          NEXT_PUBLIC_BASE_URL: "https://peishum5.github.io/profile"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

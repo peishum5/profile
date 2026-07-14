@@ -9,6 +9,7 @@ export default function About({ lang }: { lang: Lang }) {
       index="01"
       eyebrow="Profile"
       heading={site.about.heading[lang]}
+      lang={lang}
     >
       <Reveal>
         <p className="jp-wrap max-w-2xl font-serif text-lg leading-relaxed text-ink">

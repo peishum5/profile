@@ -17,12 +17,30 @@ export default function Header({ lang }: { lang: Lang }) {
   const other: Lang = lang === "ja" ? "en" : "ja";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // highlight the section currently in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) setActive(e.target.id);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    for (const s of sections) {
+      const el = document.getElementById(s);
+      if (el) observer.observe(el);
+    }
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -36,7 +54,7 @@ export default function Header({ lang }: { lang: Lang }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
         <Link
           href={`/${lang}`}
-          className="display text-xl tracking-tight text-ink"
+          className={`${lang === "ja" ? "display-ja" : "display"} text-xl tracking-tight text-ink`}
           aria-label={site.name[lang]}
         >
           {lang === "ja" ? "名越俊平" : "Shumpei Nagoshi"}
@@ -48,7 +66,10 @@ export default function Header({ lang }: { lang: Lang }) {
             <a
               key={s}
               href={`#${s}`}
-              className="text-[0.82rem] tracking-wide text-ink-soft transition-colors hover:text-accent"
+              aria-current={active === s ? "true" : undefined}
+              className={`text-[0.82rem] tracking-wide transition-colors hover:text-accent ${
+                active === s ? "text-accent" : "text-ink-soft"
+              }`}
             >
               {site.ui.nav[s][lang]}
             </a>

@@ -21,6 +21,7 @@ export default function CV({ lang }: { lang: Lang }) {
       index="04"
       eyebrow="Curriculum Vitae"
       heading={site.cv.heading[lang]}
+      lang={lang}
     >
       <div className="flex flex-col gap-14">
         {groups.map((group, gi) => (
@@ -43,7 +44,7 @@ export default function CV({ lang }: { lang: Lang }) {
                       key={i}
                       className="grid grid-cols-1 gap-1 border-t border-line py-6 first:border-t-0 first:pt-0 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-8"
                     >
-                      <span className="font-serif text-base text-accent md:pt-1 md:text-lg">
+                      <span className="text-sm tracking-wide text-ink-faint tabular-nums md:pt-1.5">
                         {label}
                       </span>
                       <div>

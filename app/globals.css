@@ -2,14 +2,15 @@
 
 :root {
   /* modern-editorial palette — warm paper, deep ink, single restrained accent */
-  --paper: #f4f1ea;
-  --paper-deep: #eae5da;
-  --ink: #1a1714;
+  --paper: #f7f4ed;
+  --paper-deep: #efe9dd;
+  --ink: #171310;
   --ink-soft: #514b42;
   --ink-faint: #7a7469;
   --line: #d9d3c7;
   --accent: #b0442c; /* editorial vermilion */
   --accent-ink: #7c2e1d;
+  --accent-wash: rgba(176, 68, 44, 0.07);
 
   /* font stacks — defined as real custom properties so both Tailwind utilities
      (via @theme inline) and the hand-written classes below resolve them.
@@ -29,6 +30,7 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
 
   --font-display: var(--stack-display);
   --font-serif: var(--stack-serif);
@@ -56,21 +58,39 @@ body {
   color: var(--paper);
 }
 
+/* paper grain — a fixed fractal-noise film over the whole page. Kept at very
+   low opacity so it reads as stock texture, not dirt. pointer-events:none so
+   it never intercepts input. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
 /* editorial helpers */
 .display {
   font-family: var(--stack-display);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 /* Japanese display headings read best in the mincho serif rather than the
-   Latin serif's fallback. */
+   Latin serif's fallback. palt tightens the wide CJK punctuation at display
+   sizes. */
 .display-ja {
   font-family: var(--stack-serif);
   font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: 0.01em;
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt" 1;
+  text-wrap: balance;
 }
 
 .eyebrow {
