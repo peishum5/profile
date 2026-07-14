@@ -12,7 +12,6 @@ export default async function Blog({ lang }: { lang: Lang }) {
       index="05"
       eyebrow="Writing"
       heading={site.blog.heading[lang]}
-      lead={site.blog.lead[lang]}
     >
       {posts.length === 0 ? (
         <Reveal>

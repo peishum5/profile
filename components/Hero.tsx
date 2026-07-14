@@ -89,9 +89,6 @@ export default function Hero({ lang }: { lang: Lang }) {
             <p className="mt-2 text-xs tracking-wide text-ink-faint">
               {site.nameReading[lang]}
             </p>
-            <p className="jp-wrap mt-5 max-w-2xl text-sm leading-relaxed text-ink-soft">
-              {site.intro[lang]}
-            </p>
           </motion.div>
         </div>
       </div>

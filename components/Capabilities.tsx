@@ -9,7 +9,6 @@ export default function Capabilities({ lang }: { lang: Lang }) {
       index="02"
       eyebrow="Capabilities"
       heading={site.capabilities.heading[lang]}
-      lead={site.capabilities.lead[lang]}
     >
       <div>
         {site.capabilities.items.map((item, i) => (

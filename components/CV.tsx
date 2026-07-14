@@ -21,7 +21,6 @@ export default function CV({ lang }: { lang: Lang }) {
       index="04"
       eyebrow="Curriculum Vitae"
       heading={site.cv.heading[lang]}
-      lead={site.cv.lead[lang]}
     >
       <div className="flex flex-col gap-14">
         {groups.map((group, gi) => (
