@@ -92,22 +92,6 @@ export default function Hero({ lang }: { lang: Lang }) {
           </motion.div>
         </div>
       </div>
-
-      {/* scroll cue */}
-      <motion.div
-        className="mx-auto mt-10 flex w-full max-w-6xl items-center gap-3 text-ink-faint"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.7 }}
-      >
-        <span className="eyebrow">{site.ui.scroll[lang]}</span>
-        <motion.span
-          className="block h-6 w-px bg-line"
-          animate={{ scaleY: [0.3, 1, 0.3] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "top" }}
-        />
-      </motion.div>
     </section>
   );
 }
