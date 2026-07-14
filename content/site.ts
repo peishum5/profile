@@ -76,8 +76,8 @@ export const site = {
   name: { ja: "名越 俊平", en: "Shumpei Nagoshi" },
   nameReading: { ja: "なごし しゅんぺい", en: "Nagoshi Shumpei" },
   tagline: {
-    ja: "リサーチャー / 制作者 / マジシャン", // ⚠ 肩書きは調整可
-    en: "Researcher / Maker / Magician",
+    ja: "科学者 / マジシャン / 体験製作者",
+    en: "Scientist / Magician / Experience Maker",
   },
   intro: {
     ja: "京都大学大学院で宇宙物理学を研究し、査読論文を筆頭著者として発表。その分析的な進め方を土台に、Webサイトやコンテンツの制作、マジックによる表現に取り組んでいます。",
