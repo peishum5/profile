@@ -16,6 +16,13 @@ export default function About({ lang }: { lang: Lang }) {
         </p>
       </Reveal>
 
+      {/* personal self-introduction */}
+      <Reveal delay={0.05}>
+        <p className="jp-wrap mt-6 max-w-2xl text-sm leading-loose text-ink-soft">
+          {site.about.personal[lang]}
+        </p>
+      </Reveal>
+
       {/* facts — one per row */}
       <dl className="mt-10">
         {site.about.facts.map((f, i) => {

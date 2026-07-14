@@ -2,8 +2,8 @@ import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import { site, type Lang, type CVItem } from "@/content/site";
 
-// カテゴリの表示順（事業を最後に）
-const ORDER: CVItem["kind"][] = ["education", "career", "award", "venture"];
+// カテゴリの表示順
+const ORDER: CVItem["kind"][] = ["education", "career", "award"];
 
 export default function CV({ lang }: { lang: Lang }) {
   const yearValue = (y: string) => (/^\d{4}$/.test(y) ? parseInt(y, 10) : -1);

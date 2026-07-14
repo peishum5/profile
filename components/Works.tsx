@@ -100,7 +100,7 @@ export default function Works({ lang }: { lang: Lang }) {
           <Entry
             key={`s${i}`}
             delay={i * 0.03}
-            label={item.year}
+            label={item.meta ? item.meta[lang] : item.year}
             title={item.title[lang]}
             href={item.link}
             body={item.summary[lang]}

@@ -91,11 +91,17 @@ export const site = {
       ja: "京都大学大学院で天体物理学（クエーサーの変光）を研究し、大規模な観測データの解析をもとに複数の査読論文を筆頭著者として発表してきました。数字と根拠にもとづいて考え、複雑なものを整理して伝わる形にすることを大切にしています。現在は、その姿勢を土台に、Webサイトやコンテンツの制作、マジックを用いた表現・場づくりに携わっています。", // ⚠ 事実に基づく下書き。適宜調整してください
       en: "At the Kyoto University Graduate School I researched astrophysics — the variability of quasars — publishing several peer-reviewed papers as first author from the analysis of large observational datasets. I work from evidence and numbers, and value turning complex material into a clear, communicable form. Today I apply that approach to web and content production, and to performance and events as a magician.",
     },
+    // 自己紹介（趣味・出身・人となり）。⚠ 事実に基づく下書き。ご自身の言葉で自由に書き換えてください。
+    personal: {
+      ja: "研究の世界からはじまり、いまはマジック・旅・ものづくり・事業づくりと、興味の向くままに手を動かしています。年末年始に骨格標本をつくってみたり、長年の憧れだったラスベガスにショーを観に行ったり。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
+      en: "I started out in research, and these days I follow my curiosity across magic, travel, making things, and building small businesses — from assembling a skeleton specimen over the holidays to finally flying to Las Vegas to watch the shows. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
+    },
     // 箇条書きの「一言でわかる」ハイライト
     facts: [
-      { ja: "拠点 — 日本", en: "Based in — Japan" }, // ⚠ 確認
-      { ja: "専門 — 天体物理学（博士）", en: "Field — Astrophysics (PhD)" }, // ⚠ 学位を確認
-      { ja: "対応 — Web制作・リサーチ・実演", en: "Work — Web, research, performance" }, // ⚠ 調整可
+      { ja: "拠点 — 京都", en: "Based in — Kyoto" }, // ⚠ 確認
+      { ja: "出身 — （記入）", en: "From — (fill in)" }, // ⚠ 出身地を記入
+      { ja: "専門 — 天体物理学（博士）", en: "Field — Astrophysics (PhD)" },
+      { ja: "趣味 — マジック・旅・ものづくり", en: "Interests — Magic, travel, making things" }, // ⚠ 調整可
     ] as L10n[],
   },
 
@@ -284,16 +290,52 @@ export const site = {
       en: "My output, grouped into research, magic, services, and other.",
     },
     items: [
+      // --- サービス service（運営中の事業・提供中のサービス） ---
       {
         group: "service" as WorkGroup,
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（サービス・プロダクトを追加）", en: "(Add a service or product)" },
+        year: "",
+        title: { ja: "AI自走塾", en: "SelfPilot AI" },
+        meta: { ja: "AI教育", en: "AI Education" },
         summary: {
-          ja: "何を提供するか・誰向けかを1〜2行で。",
-          en: "One or two lines: what it offers and for whom.",
+          ja: "個人事業主・小規模事業者向けのAI講座。土日2日間でホームページを完成・公開し、AIを日々の仕事に活かせるようにする支援プログラム。",
+          en: "An AI program for solo owners and small businesses — build and publish a website in a weekend, and make AI a daily tool.",
         },
-        link: undefined,
+        link: "https://selfpilotai.com/",
       },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "OTAtrip Guide", en: "OTAtrip Guide" },
+        meta: { ja: "旅行・観光", en: "Travel" },
+        summary: {
+          ja: "京都の地元ガイドによる少人数制ウォーキングツアー。観光地では出会えない「内側の京都」を案内する。",
+          en: "Small-group walking tours led by local Kyoto guides — the hidden, inside Kyoto.",
+        },
+        link: "https://www.otatrip.guide",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "Message Coffee", en: "Message Coffee" },
+        meta: { ja: "ギフト・体験", en: "Gift / Experience" },
+        summary: {
+          ja: "メッセージを添えて贈るギフトコーヒー。QRコードを読み込んでお湯を注ぐと、湯気とともにメッセージと写真が浮かび上がる。",
+          en: "Gift coffee with a message — scan the QR code as you pour, and a message and photo rise with the steam.",
+        },
+        link: "https://message-coffee.vercel.app",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "ImmersiveNavi", en: "ImmersiveNavi" },
+        meta: { ja: "体験・エンタメ", en: "Experience" }, // ⚠ 説明はざっくり。調整可
+        summary: {
+          ja: "イマーシブシアターやARG（代替現実ゲーム）といった没入型体験を扱うサービス。",
+          en: "A service for immersive theater and ARG (alternate reality game) experiences.",
+        },
+        link: "https://www.immersivenavi.com/",
+      },
+      // --- その他 other ---
       {
         group: "other" as WorkGroup,
         year: "20XX", // ⚠ 記入
@@ -415,27 +457,6 @@ export const site = {
         title: { ja: "（受賞・助成を追加）", en: "(Add an award or grant)" },
         detail: { ja: "賞・助成の名称、主催", en: "Name of award/grant, organizer" },
         kind: "award",
-      },
-      // --- 現在進行中の事業 venture（year は空。「運営中」と表示） ---
-      {
-        year: "",
-        title: { ja: "AI自走塾", en: "SelfPilot AI" },
-        detail: {
-          ja: "個人事業主・小規模事業者向けのAI講座。土日2日間でホームページを完成・公開し、AIを日々の仕事に活かせるようにする支援プログラム。",
-          en: "An AI program for solo owners and small businesses — build and publish a website in a weekend, and make AI a daily tool.",
-        },
-        kind: "venture",
-        link: "https://selfpilotai.com/",
-      },
-      {
-        year: "",
-        title: { ja: "OTAtrip Guide", en: "OTAtrip Guide" },
-        detail: {
-          ja: "京都の地元ガイドによる少人数制ウォーキングツアー。観光地では出会えない「内側の京都」を案内する。",
-          en: "Small-group walking tours led by local Kyoto guides — the hidden, inside Kyoto.",
-        },
-        kind: "venture",
-        link: "https://www.otatrip.guide",
       },
     ] as CVItem[],
   },
