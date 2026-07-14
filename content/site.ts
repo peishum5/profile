@@ -426,13 +426,13 @@ export const site = {
   cv: {
     heading: { ja: "経歴", en: "Curriculum Vitae" },
     lead: {
-      ja: "学歴・職歴・受賞をここにまとめていきます。",
-      en: "Education, career, and awards, compiled here.",
+      ja: "学歴・職歴をまとめています。",
+      en: "Education and career.",
     },
     items: [
       // --- 学歴 education ---
       {
-        year: "2024", // 博士課程 修了（PDが2024年4月開始のため2024年3月修了）
+        year: "2023", // 博士課程 修了（PDが2023年4月開始のため2023年3月修了）
         title: { ja: "京都大学 大学院理学研究科 博士課程 修了", en: "Ph.D., Graduate School of Science, Kyoto University" },
         detail: {
           ja: "博士（理学）。宇宙物理学（超巨大ブラックホールの光度変動に関する研究）。",
@@ -460,26 +460,38 @@ export const site = {
       },
       // --- 職歴 career ---
       {
-        year: "2024",
+        year: "2023",
         title: {
           ja: "日本学術振興会 特別研究員（PD）／ 京都大学 理学研究科",
           en: "JSPS Research Fellow (PD), Graduate School of Science, Kyoto University",
         },
         detail: {
-          ja: "2024年4月〜2025年3月。宇宙物理学の研究に従事。",
-          en: "Apr 2024 – Mar 2025. Research in astrophysics.",
+          ja: "2023年4月〜2024年3月。宇宙物理学の研究に従事。",
+          en: "Apr 2023 – Mar 2024. Research in astrophysics.",
         },
         kind: "career",
       },
       {
-        year: "2023",
+        year: "2022",
         title: {
           ja: "日本学術振興会 特別研究員（DC2）／ 京都大学",
           en: "JSPS Research Fellow (DC2), Kyoto University",
         },
         detail: {
-          ja: "2023年4月〜2024年3月。博士課程における研究。",
-          en: "Apr 2023 – Mar 2024. Research during the doctoral program.",
+          ja: "2022年4月〜2023年3月。博士課程における研究。",
+          en: "Apr 2022 – Mar 2023. Research during the doctoral program.",
+        },
+        kind: "career",
+      },
+      {
+        year: "2021",
+        title: {
+          ja: "宇宙倫理学教育プログラム リサーチアシスタント",
+          en: "Research Assistant, Space Ethics Education Program",
+        },
+        detail: {
+          ja: "2021年9月〜2023年3月。",
+          en: "Sep 2021 – Mar 2023.",
         },
         kind: "career",
       },
@@ -494,13 +506,6 @@ export const site = {
           en: "A two-month research stay in astrophysics.",
         },
         kind: "career",
-      },
-      // --- 受賞・助成 award ---
-      {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（受賞・助成を追加）", en: "(Add an award or grant)" },
-        detail: { ja: "賞・助成の名称、主催", en: "Name of award/grant, organizer" },
-        kind: "award",
       },
     ] as CVItem[],
   },
