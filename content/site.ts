@@ -392,22 +392,28 @@ export const site = {
     },
     items: [
       {
-        year: "20XX",
-        title: { ja: "受賞・出演 1（仮）", en: "Award / Appearance 1 (placeholder)" },
-        org: { ja: "主催・媒体", en: "Organizer / Media" },
-        note: { ja: "内容を一言で。", en: "One line of detail." },
+        year: "2022",
+        title: { ja: "銀賞", en: "Silver Prize" },
+        org: {
+          ja: "JCMA チャレンジャーズライブ 大阪 2022",
+          en: "JCMA Challengers Live Osaka 2022",
+        },
+        note: {
+          ja: "クロースアップマジックのコンテスト。",
+          en: "A close-up magic competition.",
+        },
       },
       {
-        year: "20XX",
-        title: { ja: "受賞・出演 2（仮）", en: "Award / Appearance 2 (placeholder)" },
-        org: { ja: "主催・媒体", en: "Organizer / Media" },
-        note: { ja: "内容を一言で。", en: "One line of detail." },
-      },
-      {
-        year: "20XX",
-        title: { ja: "受賞・出演 3（仮）", en: "Award / Appearance 3 (placeholder)" },
-        org: { ja: "主催・媒体", en: "Organizer / Media" },
-        note: { ja: "内容を一言で。", en: "One line of detail." },
+        year: "2018",
+        title: { ja: "Mystic賞", en: "Mystic Prize" },
+        org: {
+          ja: "JCMA チャレンジャーズライブ 大阪 2018",
+          en: "JCMA Challengers Live Osaka 2018",
+        },
+        note: {
+          ja: "クロースアップマジックのコンテスト。",
+          en: "A close-up magic competition.",
+        },
       },
     ] as MagicItem[],
   },
