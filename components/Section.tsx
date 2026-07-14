@@ -1,6 +1,7 @@
 import Reveal from "@/components/Reveal";
 
-/** Shared editorial section shell: numbered eyebrow, large heading, optional lead. */
+/** Shared sober section shell: numbered eyebrow, heading, optional lead stacked
+ *  below (document/CV-like, no side-by-side layout). */
 export default function Section({
   id,
   index,
@@ -8,7 +9,6 @@ export default function Section({
   heading,
   lead,
   children,
-  dark = false,
   className,
 }: {
   id: string;
@@ -17,43 +17,30 @@ export default function Section({
   heading: string;
   lead?: string;
   children: React.ReactNode;
-  dark?: boolean;
   className?: string;
 }) {
   return (
     <section
       id={id}
-      className={`scroll-mt-24 px-6 py-20 md:px-10 md:py-28 ${
-        dark ? "bg-ink text-paper" : "border-t border-line"
-      } ${className ?? ""}`}
+      className={`scroll-mt-24 border-t border-line px-6 py-16 md:px-10 md:py-24 ${className ?? ""}`}
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-4xl">
         <Reveal>
-          <div className="mb-12 flex flex-col gap-5 md:mb-16 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className={`eyebrow mb-4 ${dark ? "!text-paper/50" : ""}`}>
-                <span className="text-accent">{index}</span>
-                <span className={`mx-2 ${dark ? "text-paper/30" : "text-line"}`}>/</span>
-                {eyebrow}
-              </p>
-              <h2
-                className={`display text-[clamp(1.6rem,3.4vw,2.6rem)] ${
-                  dark ? "text-paper" : "text-ink"
-                }`}
-              >
-                {heading}
-              </h2>
-            </div>
+          <header className="mb-10 md:mb-14">
+            <p className="eyebrow mb-3">
+              <span className="text-accent">{index}</span>
+              <span className="mx-2 text-line">/</span>
+              {eyebrow}
+            </p>
+            <h2 className="display text-[clamp(1.6rem,3.4vw,2.6rem)] text-ink">
+              {heading}
+            </h2>
             {lead && (
-              <p
-                className={`jp-wrap max-w-sm font-serif text-base leading-relaxed ${
-                  dark ? "text-paper/70" : "text-ink-soft"
-                }`}
-              >
+              <p className="jp-wrap mt-4 max-w-2xl text-sm leading-relaxed text-ink-soft">
                 {lead}
               </p>
             )}
-          </div>
+          </header>
         </Reveal>
         {children}
       </div>

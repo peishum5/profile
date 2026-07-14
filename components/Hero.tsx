@@ -79,22 +79,20 @@ export default function Hero({ lang }: { lang: Lang }) {
             </motion.span>
           </h1>
 
-          {/* bottom band: tagline (left) + intro (left-aligned, own column) */}
+          {/* bottom band: tagline then intro, stacked */}
           <motion.div
-            className="mt-10 grid gap-8 border-t border-line pt-8 md:grid-cols-[1fr_minmax(0,30rem)] md:gap-16"
+            className="mt-10 border-t border-line pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.34, ease }}
           >
-            <div>
-              <p className="font-serif text-lg leading-relaxed text-ink md:text-xl">
-                {site.tagline[lang]}
-              </p>
-              <p className="mt-2 text-xs tracking-wide text-ink-faint">
-                {site.nameReading[lang]}
-              </p>
-            </div>
-            <p className="jp-wrap max-w-lg text-sm leading-relaxed text-ink-soft">
+            <p className="font-serif text-lg leading-relaxed text-ink md:text-xl">
+              {site.tagline[lang]}
+            </p>
+            <p className="mt-2 text-xs tracking-wide text-ink-faint">
+              {site.nameReading[lang]}
+            </p>
+            <p className="jp-wrap mt-5 max-w-2xl text-sm leading-relaxed text-ink-soft">
               {site.intro[lang]}
             </p>
           </motion.div>

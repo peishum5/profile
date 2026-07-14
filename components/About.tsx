@@ -7,44 +7,29 @@ export default function About({ lang }: { lang: Lang }) {
     <Section
       id="about"
       index="01"
-      eyebrow={lang === "ja" ? "Profile" : "Profile"}
+      eyebrow="Profile"
       heading={site.about.heading[lang]}
     >
-      <div className="grid gap-12 md:grid-cols-[minmax(0,20rem)_1fr] md:gap-16">
-        {/* portrait placeholder */}
-        <Reveal>
-          <div className="relative aspect-[4/5] w-full overflow-hidden border border-line bg-paper-deep">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="eyebrow text-ink-faint">Portrait</span>
-            </div>
-            {/* thin editorial corner marks */}
-            <span className="absolute left-3 top-3 h-4 w-4 border-l border-t border-ink-faint" />
-            <span className="absolute bottom-3 right-3 h-4 w-4 border-b border-r border-ink-faint" />
-          </div>
-        </Reveal>
+      <Reveal>
+        <p className="jp-wrap max-w-2xl font-serif text-lg leading-relaxed text-ink">
+          {site.about.body[lang]}
+        </p>
+      </Reveal>
 
-        <div>
-          <Reveal delay={0.05}>
-            <p className="jp-wrap font-serif text-lg leading-relaxed text-ink md:text-xl">
-              {site.about.body[lang]}
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <dl className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-3">
-              {site.about.facts.map((f, i) => {
-                const [key, val] = f[lang].split("—");
-                return (
-                  <div key={i} className="bg-paper px-5 py-6">
-                    <dt className="eyebrow mb-2">{key?.trim()}</dt>
-                    <dd className="text-sm text-ink-soft">{val?.trim()}</dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </Reveal>
-        </div>
-      </div>
+      {/* facts — one per row */}
+      <dl className="mt-10">
+        {site.about.facts.map((f, i) => {
+          const [key, val] = f[lang].split("—");
+          return (
+            <Reveal key={i} delay={i * 0.04}>
+              <div className="grid gap-1 border-t border-line py-4 md:grid-cols-[8rem_1fr] md:gap-8">
+                <dt className="eyebrow md:pt-1">{key?.trim()}</dt>
+                <dd className="text-sm text-ink-soft">{val?.trim()}</dd>
+              </div>
+            </Reveal>
+          );
+        })}
+      </dl>
     </Section>
   );
 }

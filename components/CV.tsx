@@ -37,9 +37,9 @@ export default function CV({ lang }: { lang: Lang }) {
                 {group.items.map((item, i) => (
                   <li
                     key={i}
-                    className="grid grid-cols-1 gap-2 border-t border-line py-6 first:border-t-0 first:pt-0 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-8"
+                    className="grid grid-cols-1 gap-1 border-t border-line py-6 first:border-t-0 first:pt-0 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-8"
                   >
-                    <span className="display text-xl text-accent md:text-2xl">
+                    <span className="font-serif text-base text-accent md:pt-1 md:text-lg">
                       {item.year}
                     </span>
                     <div>

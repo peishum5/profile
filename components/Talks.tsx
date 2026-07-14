@@ -1,5 +1,5 @@
 import Section from "@/components/Section";
-import Reveal from "@/components/Reveal";
+import Entry from "@/components/Entry";
 import { site, type Lang } from "@/content/site";
 
 export default function Talks({ lang }: { lang: Lang }) {
@@ -11,38 +11,18 @@ export default function Talks({ lang }: { lang: Lang }) {
       heading={site.talks.heading[lang]}
       lead={site.talks.lead[lang]}
     >
-      <ul>
+      <div>
         {site.talks.items.map((item, i) => (
-          <Reveal key={i} delay={i * 0.05}>
-            <li className="grid grid-cols-1 gap-2 border-t border-line py-7 md:grid-cols-[7rem_minmax(0,1fr)_8rem] md:items-baseline md:gap-10">
-              <span className="display text-xl text-accent md:text-2xl">
-                {item.year}
-              </span>
-              <div>
-                {item.link ? (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent md:text-xl"
-                  >
-                    {item.title[lang]}
-                    <span className="text-accent">↗</span>
-                  </a>
-                ) : (
-                  <h3 className="font-serif text-lg text-ink md:text-xl">
-                    {item.title[lang]}
-                  </h3>
-                )}
-                <p className="mt-1 text-sm text-ink-faint">{item.venue[lang]}</p>
-              </div>
-              <span className="text-xs tracking-wide text-ink-faint md:text-right">
-                {item.role[lang]}
-              </span>
-            </li>
-          </Reveal>
+          <Entry
+            key={i}
+            delay={i * 0.05}
+            label={item.year}
+            title={item.title[lang]}
+            href={item.link}
+            meta={`${item.venue[lang]} ・ ${item.role[lang]}`}
+          />
         ))}
-      </ul>
+      </div>
     </Section>
   );
 }

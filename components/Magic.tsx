@@ -1,11 +1,11 @@
 import Section from "@/components/Section";
+import Entry from "@/components/Entry";
 import Reveal from "@/components/Reveal";
 import { site, type Lang } from "@/content/site";
 
 export default function Magic({ lang }: { lang: Lang }) {
   const q = site.magic.quote;
-  const quoted =
-    lang === "ja" ? `「${q.text.ja}」` : `“${q.text.en}”`;
+  const quoted = lang === "ja" ? `「${q.text.ja}」` : `“${q.text.en}”`;
 
   return (
     <Section
@@ -14,40 +14,32 @@ export default function Magic({ lang }: { lang: Lang }) {
       eyebrow="Magic"
       heading={site.magic.heading[lang]}
       lead={site.magic.lead[lang]}
-      dark
     >
-      {/* pull quote — huge faint mark sits behind the text as a texture */}
+      {/* a single, understated quote */}
       <Reveal>
-        <figure className="relative mb-16 overflow-hidden md:mb-20">
-          <span
-            aria-hidden
-            className="display pointer-events-none absolute -left-4 -top-20 select-none text-[18rem] leading-none text-paper/[0.05] md:-top-28 md:text-[26rem]"
-          >
-            &ldquo;
-          </span>
-          <blockquote className="jp-wrap jp-palt relative max-w-3xl font-serif text-[clamp(1.15rem,2.2vw,1.75rem)] leading-[1.8] tracking-[0.01em] text-paper">
+        <figure className="mb-12 border-l-2 border-line pl-5">
+          <blockquote className="jp-wrap font-serif text-base leading-relaxed text-ink md:text-lg">
             {quoted}
           </blockquote>
-          <figcaption className="mt-6 text-sm text-paper/50">
+          <figcaption className="mt-2 text-sm text-ink-faint">
             {q.source[lang]}
           </figcaption>
         </figure>
       </Reveal>
 
-      <ul className="grid gap-px overflow-hidden border border-paper/15 bg-paper/15 md:grid-cols-3">
+      {/* awards / appearances — one per row */}
+      <div>
         {site.magic.items.map((item, i) => (
-          <Reveal key={i} delay={i * 0.06} className="flex">
-            <li className="flex flex-1 flex-col bg-ink p-6">
-              <span className="display text-2xl text-accent">{item.year}</span>
-              <h3 className="mt-4 font-serif text-lg text-paper">{item.title[lang]}</h3>
-              <p className="mt-1 eyebrow !text-paper/45">{item.org[lang]}</p>
-              <p className="mt-3 text-sm leading-relaxed text-paper/70">
-                {item.note[lang]}
-              </p>
-            </li>
-          </Reveal>
+          <Entry
+            key={i}
+            delay={i * 0.05}
+            label={item.year}
+            title={item.title[lang]}
+            meta={item.org[lang]}
+            body={item.note[lang]}
+          />
         ))}
-      </ul>
+      </div>
     </Section>
   );
 }
