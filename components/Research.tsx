@@ -13,7 +13,7 @@ export default function Research({ lang }: { lang: Lang }) {
   return (
     <Section
       id="research"
-      index="03"
+      index="04"
       eyebrow="Research"
       heading={site.research.heading[lang]}
       lead={site.research.lead[lang]}

@@ -8,12 +8,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const index = [
   { n: "01", key: "about" },
   { n: "02", key: "capabilities" },
-  { n: "03", key: "research" },
-  { n: "04", key: "works" },
-  { n: "05", key: "talks" },
-  { n: "06", key: "magic" },
-  { n: "07", key: "cv" },
-  { n: "08", key: "contact" },
+  { n: "03", key: "ventures" },
+  { n: "04", key: "research" },
+  { n: "05", key: "works" },
+  { n: "06", key: "talks" },
+  { n: "07", key: "magic" },
+  { n: "08", key: "cv" },
+  { n: "09", key: "contact" },
 ] as const;
 
 export default function Hero({ lang }: { lang: Lang }) {

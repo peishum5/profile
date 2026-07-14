@@ -58,6 +58,14 @@ export type PubItem = {
   link?: string;
 };
 
+// 運営中の事業
+export type VentureItem = {
+  title: L10n;
+  tag: L10n; // 分野・種別（例: AI教育 / 旅行）
+  summary: L10n;
+  link?: string;
+};
+
 export const site = {
   // --- 基本情報 ---------------------------------------------------------------
   name: { ja: "名越 俊平", en: "Shumpei Nagoshi" },
@@ -117,6 +125,37 @@ export const site = {
         },
       },
     ] as CapabilityItem[],
+  },
+
+  // --- Ventures 運営中の事業 --------------------------------------------------
+  // いま運営している事業の箱。1件 = カード1枚。
+  // 追記は items に { title, tag, summary, link? } を足すだけ。link でサイトへ。
+  ventures: {
+    heading: { ja: "運営中の事業", en: "Ventures" },
+    lead: {
+      ja: "いま運営している事業。",
+      en: "Businesses I currently run.",
+    },
+    items: [
+      {
+        title: { ja: "AI自走塾", en: "AI Jiso Juku" },
+        tag: { ja: "AI教育", en: "AI Education" },
+        summary: {
+          ja: "（一言説明を追加：どんな塾か・誰向けか）", // ⚠ 記入
+          en: "(Add a one-line description)",
+        },
+        link: undefined, // ⚠ サイトがあれば URL を記入
+      },
+      {
+        title: { ja: "OTAtrip Guide", en: "OTAtrip Guide" },
+        tag: { ja: "旅行", en: "Travel" },
+        summary: {
+          ja: "（一言説明を追加：どんなサービスか）", // ⚠ 記入
+          en: "(Add a one-line description)",
+        },
+        link: undefined, // ⚠ サイトがあれば URL を記入
+      },
+    ] as VentureItem[],
   },
 
   // --- Research 研究成果 -------------------------------------------------------
@@ -293,16 +332,24 @@ export const site = {
     },
     items: [
       {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（登壇・発表を追加）", en: "(Add a talk or presentation)" },
-        venue: { ja: "イベント名・場所", en: "Event / venue" },
-        role: { ja: "登壇", en: "Talk" },
+        year: "2024",
+        title: {
+          ja: "超巨大ブラックホールの周囲に隠れたリング ―時系列データから復元された立体構造―",
+          en: "A hidden ring around a supermassive black hole — 3D structure recovered from time-series data",
+        },
+        venue: { ja: "京都大学 プレスリリース", en: "Kyoto University press release" },
+        role: { ja: "プレスリリース", en: "Press release" },
+        link: "https://www.kyoto-u.ac.jp/ja/research-news/2024-03-04",
       },
       {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（掲載・出演を追加）", en: "(Add a feature or appearance)" },
-        venue: { ja: "媒体名・番組名", en: "Media / program" },
-        role: { ja: "掲載", en: "Feature" },
+        year: "2022",
+        title: {
+          ja: "クエーサーの明るさの変動に特性を発見",
+          en: "Characteristic found in the brightness variation of quasars",
+        },
+        venue: { ja: "京都大学 プレスリリース", en: "Kyoto University press release" },
+        role: { ja: "プレスリリース", en: "Press release" },
+        link: "https://www.kyoto-u.ac.jp/ja/research-news/2022-08-31",
       },
     ] as PubItem[],
   },
@@ -374,9 +421,15 @@ export const site = {
       },
       // --- 職歴 career ---
       {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（職歴を追加）", en: "(Add a role)" },
-        detail: { ja: "所属・役職・担当した仕事", en: "Organization, role, responsibilities" },
+        year: "2024", // ⚠ 開始年・現職かどうかを確認
+        title: {
+          ja: "日本学術振興会 特別研究員（PD）／ 京都大学 理学研究科",
+          en: "JSPS Research Fellow (PD), Graduate School of Science, Kyoto University",
+        },
+        detail: {
+          ja: "天体物理学の研究に従事。", // ⚠ 期間・内容を確認
+          en: "Research in astrophysics.",
+        },
         kind: "career",
       },
       {
@@ -404,11 +457,9 @@ export const site = {
     },
     email: "", // ⚠ 公開してよいメールアドレスが決まったら記入
     socials: [
-      // ⚠ 掲載するSNSが決まったら url を記入。空なら非表示。
-      { label: "X (Twitter)", url: "" },
-      { label: "Instagram", url: "" },
-      { label: "GitHub", url: "" },
-      { label: "YouTube", url: "" },
+      // url を入れると有効リンクに、空なら「準備中」表示になります。
+      { label: "note", url: "https://note.com/peishum5" },
+      { label: "Instagram", url: "https://www.instagram.com/peishum5" },
     ] as Social[],
   },
 
@@ -417,6 +468,7 @@ export const site = {
     nav: {
       about: { ja: "プロフィール", en: "Profile" },
       capabilities: { ja: "できること", en: "Capabilities" },
+      ventures: { ja: "事業", en: "Ventures" },
       research: { ja: "研究", en: "Research" },
       works: { ja: "成果物", en: "Works" },
       talks: { ja: "発表", en: "Talks" },

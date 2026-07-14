@@ -6,7 +6,7 @@ export default function Talks({ lang }: { lang: Lang }) {
   return (
     <Section
       id="talks"
-      index="05"
+      index="06"
       eyebrow="Talks & Features"
       heading={site.talks.heading[lang]}
       lead={site.talks.lead[lang]}
@@ -19,9 +19,21 @@ export default function Talks({ lang }: { lang: Lang }) {
                 {item.year}
               </span>
               <div>
-                <h3 className="font-serif text-lg text-ink md:text-xl">
-                  {item.title[lang]}
-                </h3>
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent md:text-xl"
+                  >
+                    {item.title[lang]}
+                    <span className="text-accent">↗</span>
+                  </a>
+                ) : (
+                  <h3 className="font-serif text-lg text-ink md:text-xl">
+                    {item.title[lang]}
+                  </h3>
+                )}
                 <p className="mt-1 text-sm text-ink-faint">{item.venue[lang]}</p>
               </div>
               <span className="text-xs tracking-wide text-ink-faint md:text-right">

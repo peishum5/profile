@@ -6,7 +6,7 @@ export default function Works({ lang }: { lang: Lang }) {
   return (
     <Section
       id="works"
-      index="04"
+      index="05"
       eyebrow="Works"
       heading={site.works.heading[lang]}
       lead={site.works.lead[lang]}

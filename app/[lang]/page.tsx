@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Capabilities from "@/components/Capabilities";
+import Ventures from "@/components/Ventures";
 import Research from "@/components/Research";
 import Works from "@/components/Works";
 import Talks from "@/components/Talks";
@@ -28,6 +29,7 @@ export default async function Page({
         <Hero lang={lang} />
         <About lang={lang} />
         <Capabilities lang={lang} />
+        <Ventures lang={lang} />
         <Research lang={lang} />
         <Works lang={lang} />
         <Talks lang={lang} />

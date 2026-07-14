@@ -7,6 +7,7 @@ import { site, type Lang } from "@/content/site";
 const sections = [
   "about",
   "capabilities",
+  "ventures",
   "research",
   "works",
   "talks",
