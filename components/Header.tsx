@@ -13,6 +13,7 @@ const sections = [
   "talks",
   "magic",
   "cv",
+  "blog",
   "contact",
 ] as const;
 
@@ -46,7 +47,7 @@ export default function Header({ lang }: { lang: Lang }) {
         </Link>
 
         {/* desktop nav */}
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-6">
           {sections.map((s) => (
             <a
               key={s}

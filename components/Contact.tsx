@@ -2,7 +2,6 @@ import Reveal from "@/components/Reveal";
 import { site, type Lang } from "@/content/site";
 
 export default function Contact({ lang }: { lang: Lang }) {
-  const soon = lang === "ja" ? "準備中" : "soon";
   return (
     <section
       id="contact"
@@ -12,7 +11,7 @@ export default function Contact({ lang }: { lang: Lang }) {
         <Reveal>
           <header className="mb-10 md:mb-14">
             <p className="eyebrow mb-3">
-              <span className="text-accent">09</span>
+              <span className="text-accent">10</span>
               <span className="mx-2 text-line">/</span>
               Contact
             </p>
@@ -25,59 +24,21 @@ export default function Contact({ lang }: { lang: Lang }) {
           </header>
         </Reveal>
 
-        {/* email */}
+        {/* email — the only contact detail */}
         <Reveal>
           <div className="grid gap-1 border-t border-line py-6 md:grid-cols-[8rem_1fr] md:gap-8">
             <div className="eyebrow md:pt-1">Email</div>
             <div>
-              {site.contact.email ? (
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent md:text-xl"
-                >
-                  {site.contact.email}
-                  <span className="text-accent">↗</span>
-                </a>
-              ) : (
-                <p className="text-sm text-ink-faint">
-                  {lang === "ja"
-                    ? "公開用アドレスは準備中です"
-                    : "Public address coming soon"}
-                </p>
-              )}
+              <a
+                href={`mailto:${site.contact.email}`}
+                className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent md:text-xl"
+              >
+                {site.contact.email}
+                <span className="text-accent">↗</span>
+              </a>
             </div>
           </div>
         </Reveal>
-
-        {/* socials — one per row */}
-        {site.contact.socials.map((s, i) => {
-          const active = Boolean(s.url);
-          return (
-            <Reveal key={s.label} delay={i * 0.04}>
-              <div className="grid gap-1 border-t border-line py-6 md:grid-cols-[8rem_1fr] md:gap-8">
-                <div className="eyebrow md:pt-1">SNS</div>
-                <div>
-                  {active ? (
-                    <a
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent md:text-xl"
-                    >
-                      {s.label}
-                      <span className="text-accent">↗</span>
-                    </a>
-                  ) : (
-                    <span className="font-serif text-lg text-ink-faint md:text-xl">
-                      {s.label}
-                      <span className="ml-2 text-xs">{soon}</span>
-                    </span>
-                  )}
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
 
         <Reveal>
           <div className="mt-12 border-t border-line pt-6 text-right">

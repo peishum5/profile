@@ -466,16 +466,27 @@ export const site = {
     ] as CVItem[],
   },
 
+  // --- Blog (note) ------------------------------------------------------------
+  // 記事は build 時に note の RSS から自動取得（lib/note.ts）。ここは見出し等のみ。
+  blog: {
+    heading: { ja: "ブログ", en: "Writing" },
+    lead: {
+      ja: "note に書いている記事。研究・事業・旅・考えごとなど。",
+      en: "Recent writing on note — research, ventures, travel, and thoughts.",
+    },
+    url: "https://note.com/peishum5",
+  },
+
   // --- Contact ----------------------------------------------------------------
   contact: {
     heading: { ja: "連絡先", en: "Contact" },
     lead: {
-      ja: "お問い合わせ・ご依頼はこちらから。", // ⚠ 公開用メールは要確認
+      ja: "お問い合わせ・ご依頼はこちらから。",
       en: "For inquiries and requests, reach me here.",
     },
-    email: "", // ⚠ 公開してよいメールアドレスが決まったら記入
+    email: "shumpei.nagoshi@cosmic-magic.com",
+    // フッターに小さく載せるSNSリンク（連絡先本体はメールのみ）。
     socials: [
-      // url を入れると有効リンクに、空なら「準備中」表示になります。
       { label: "note", url: "https://note.com/peishum5" },
       { label: "Instagram", url: "https://www.instagram.com/peishum5" },
     ] as Social[],
@@ -492,6 +503,7 @@ export const site = {
       talks: { ja: "発表", en: "Talks" },
       magic: { ja: "マジック", en: "Magic" },
       cv: { ja: "経歴", en: "CV" },
+      blog: { ja: "ブログ", en: "Writing" },
       contact: { ja: "連絡先", en: "Contact" },
     },
     viewMore: { ja: "詳しく", en: "View" },

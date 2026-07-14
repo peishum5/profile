@@ -10,6 +10,7 @@ import Works from "@/components/Works";
 import Talks from "@/components/Talks";
 import Magic from "@/components/Magic";
 import CV from "@/components/CV";
+import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -35,6 +36,7 @@ export default async function Page({
         <Talks lang={lang} />
         <Magic lang={lang} />
         <CV lang={lang} />
+        <Blog lang={lang} />
         <Contact lang={lang} />
       </main>
       <Footer lang={lang} />

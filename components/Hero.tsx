@@ -14,7 +14,8 @@ const index = [
   { n: "06", key: "talks" },
   { n: "07", key: "magic" },
   { n: "08", key: "cv" },
-  { n: "09", key: "contact" },
+  { n: "09", key: "blog" },
+  { n: "10", key: "contact" },
 ] as const;
 
 export default function Hero({ lang }: { lang: Lang }) {

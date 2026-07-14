@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuild daily so the note blog (fetched from RSS at build time) stays fresh.
+  schedule:
+    - cron: "0 21 * * *"
 
 permissions:
   contents: read
