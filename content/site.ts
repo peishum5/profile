@@ -138,22 +138,22 @@ export const site = {
     },
     items: [
       {
-        title: { ja: "AI自走塾", en: "AI Jiso Juku" },
+        title: { ja: "AI自走塾", en: "SelfPilot AI" },
         tag: { ja: "AI教育", en: "AI Education" },
         summary: {
-          ja: "（一言説明を追加：どんな塾か・誰向けか）", // ⚠ 記入
-          en: "(Add a one-line description)",
+          ja: "個人事業主・小規模事業者向けのAI講座。土日2日間で自分のホームページを完成・公開し、AIを日々の仕事に活かせるようにする「自走」支援プログラム。",
+          en: "An AI program for solo owners and small businesses — build and publish your own website in a weekend, and learn to make AI a daily tool.",
         },
-        link: undefined, // ⚠ サイトがあれば URL を記入
+        link: "https://selfpilotai.com/",
       },
       {
         title: { ja: "OTAtrip Guide", en: "OTAtrip Guide" },
-        tag: { ja: "旅行", en: "Travel" },
+        tag: { ja: "旅行・観光", en: "Travel" },
         summary: {
-          ja: "（一言説明を追加：どんなサービスか）", // ⚠ 記入
-          en: "(Add a one-line description)",
+          ja: "京都の地元ガイドによる少人数制ウォーキングツアー。夜の酒場めぐりや路地・文化スポットなど、観光地では出会えない「内側の京都」を案内する。",
+          en: "Small-group walking tours led by local Kyoto guides — hidden bars, backstreets, and culture that ordinary sightseeing misses.",
         },
-        link: undefined, // ⚠ サイトがあれば URL を記入
+        link: "https://www.otatrip.guide",
       },
     ] as VentureItem[],
   },
@@ -405,37 +405,49 @@ export const site = {
     items: [
       // --- 学歴 education ---
       {
-        year: "2023", // ⚠ 修了年を確認してください
+        year: "2024", // 博士課程 修了（PDが2024年4月開始のため2024年3月修了）
         title: { ja: "京都大学 大学院理学研究科 博士課程 修了", en: "Ph.D., Graduate School of Science, Kyoto University" },
         detail: {
-          ja: "宇宙物理学専攻。博士（理学）。クエーサーの変光に関する研究。", // ⚠ 学位・専攻の表記を確認
-          en: "Astrophysics. Ph.D. in Science. Research on quasar variability.",
+          ja: "博士（理学）。宇宙物理学（クエーサーの変光に関する研究）。",
+          en: "Ph.D. in Science. Astrophysics — research on quasar variability.",
         },
         kind: "education",
       },
       {
-        year: "20XX", // ⚠ 記入：学部・修士など
-        title: { ja: "（学歴を追加）", en: "(Add education)" },
-        detail: { ja: "学校名・学部・専攻など", en: "Institution, faculty, major, etc." },
+        year: "2018",
+        title: { ja: "京都大学 理学部 卒業", en: "B.Sc., Faculty of Science, Kyoto University" },
+        detail: { ja: "2014年4月 入学。", en: "Enrolled April 2014." },
+        kind: "education",
+      },
+      {
+        year: "2013",
+        title: { ja: "ラ・サール高等学校 卒業", en: "La Salle High School" },
+        detail: { ja: "鹿児島県。", en: "Kagoshima, Japan." },
         kind: "education",
       },
       // --- 職歴 career ---
       {
-        year: "2024", // ⚠ 開始年・現職かどうかを確認
+        year: "2024",
         title: {
           ja: "日本学術振興会 特別研究員（PD）／ 京都大学 理学研究科",
           en: "JSPS Research Fellow (PD), Graduate School of Science, Kyoto University",
         },
         detail: {
-          ja: "天体物理学の研究に従事。", // ⚠ 期間・内容を確認
-          en: "Research in astrophysics.",
+          ja: "2024年4月〜2025年3月。天体物理学の研究に従事。",
+          en: "Apr 2024 – Mar 2025. Research in astrophysics.",
         },
         kind: "career",
       },
       {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（職歴を追加）", en: "(Add a role)" },
-        detail: { ja: "所属・役職・担当した仕事", en: "Organization, role, responsibilities" },
+        year: "2023",
+        title: {
+          ja: "日本学術振興会 特別研究員（DC2）／ 京都大学",
+          en: "JSPS Research Fellow (DC2), Kyoto University",
+        },
+        detail: {
+          ja: "2023年4月〜2024年3月。博士課程における研究。",
+          en: "Apr 2023 – Mar 2024. Research during the doctoral program.",
+        },
         kind: "career",
       },
       // --- 受賞・助成 award ---
