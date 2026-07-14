@@ -93,8 +93,8 @@ export const site = {
     },
     // 自己紹介（趣味・出身・人となり）。⚠ 事実に基づく下書き。ご自身の言葉で自由に書き換えてください。
     personal: {
-      ja: "鹿児島生まれ。幼稚園の4年間をインドネシア・スラバヤで、小学校の3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、一年の浪人を経て京都大学へ。大学院では宇宙物理学を研究し、北京・中国科学院への短期留学や海外での学会発表も経験しました。いまは生成AIを毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
-      en: "Born in Kagoshima. I spent four years of early childhood in Surabaya, Indonesia, and three primary-school years on a remote island so small there were no classmates my age. From junior high I attended La Salle, then entered Kyoto University after a year of exam preparation. In graduate school I researched astrophysics, with a short research stay at the Chinese Academy of Sciences in Beijing and talks at international conferences. These days I use generative AI almost daily while following my curiosity across magic, travel, and making things. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
+      ja: "鹿児島生まれ。幼稚園の4年間をインドネシア・スラバヤで、小学校の3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、京都大学へ。大学院では宇宙物理学を研究し、北京・中国科学院への短期留学や海外での学会発表も経験しました。いまは生成AIを毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
+      en: "Born in Kagoshima. I spent four years of early childhood in Surabaya, Indonesia, and three primary-school years on a remote island so small there were no classmates my age. From junior high I attended La Salle, then Kyoto University. In graduate school I researched astrophysics, with a short research stay at the Chinese Academy of Sciences in Beijing and talks at international conferences. These days I use generative AI almost daily while following my curiosity across magic, travel, and making things. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
     },
     // 箇条書きの「一言でわかる」ハイライト
     facts: [
@@ -526,6 +526,7 @@ export const site = {
     email: "shumpei.nagoshi@cosmic-magic.com",
     // フッターに小さく載せるSNSリンク（連絡先本体はメールのみ）。
     socials: [
+      { label: "X", url: "https://x.com/peishum5" },
       { label: "note", url: "https://note.com/peishum5" },
       { label: "Instagram", url: "https://www.instagram.com/peishum5" },
     ] as Social[],
