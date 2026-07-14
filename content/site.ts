@@ -414,6 +414,12 @@ export const site = {
         kind: "education",
       },
       {
+        year: "2020", // ⚠ 修士修了年を確認（2018卒→2年で2020と推定）
+        title: { ja: "京都大学 大学院理学研究科 修士課程 修了", en: "M.Sc., Graduate School of Science, Kyoto University" },
+        detail: { ja: "修士（理学）。宇宙物理学。", en: "M.Sc. in Science. Astrophysics." },
+        kind: "education",
+      },
+      {
         year: "2018",
         title: { ja: "京都大学 理学部 卒業", en: "B.Sc., Faculty of Science, Kyoto University" },
         detail: { ja: "2014年4月 入学。", en: "Enrolled April 2014." },
