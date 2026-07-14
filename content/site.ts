@@ -93,15 +93,16 @@ export const site = {
     },
     // 自己紹介（趣味・出身・人となり）。⚠ 事実に基づく下書き。ご自身の言葉で自由に書き換えてください。
     personal: {
-      ja: "研究の世界からはじまり、いまはマジック・旅・ものづくり・事業づくりと、興味の向くままに手を動かしています。年末年始に骨格標本をつくってみたり、長年の憧れだったラスベガスにショーを観に行ったり。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
-      en: "I started out in research, and these days I follow my curiosity across magic, travel, making things, and building small businesses — from assembling a skeleton specimen over the holidays to finally flying to Las Vegas to watch the shows. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
+      ja: "鹿児島生まれ。幼稚園の4年間をインドネシア・スラバヤで、小学校の3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、一年の浪人を経て京都大学へ。大学院では天体物理学を研究し、北京・中国科学院への短期留学や海外での学会発表も経験しました。いまは生成AIを毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
+      en: "Born in Kagoshima. I spent four years of early childhood in Surabaya, Indonesia, and three primary-school years on a remote island so small there were no classmates my age. From junior high I attended La Salle, then entered Kyoto University after a year of exam preparation. In graduate school I researched astrophysics, with a short research stay at the Chinese Academy of Sciences in Beijing and talks at international conferences. These days I use generative AI almost daily while following my curiosity across magic, travel, and making things. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
     },
     // 箇条書きの「一言でわかる」ハイライト
     facts: [
-      { ja: "拠点 — 京都", en: "Based in — Kyoto" }, // ⚠ 確認
-      { ja: "出身 — （記入）", en: "From — (fill in)" }, // ⚠ 出身地を記入
+      { ja: "拠点 — 京都", en: "Based in — Kyoto" },
+      { ja: "出身 — 鹿児島県", en: "From — Kagoshima, Japan" },
       { ja: "専門 — 天体物理学（博士）", en: "Field — Astrophysics (PhD)" },
-      { ja: "趣味 — マジック・旅・ものづくり", en: "Interests — Magic, travel, making things" }, // ⚠ 調整可
+      { ja: "言語 — 日本語・英語", en: "Languages — Japanese, English" },
+      { ja: "趣味 — マジック・旅・ものづくり", en: "Interests — Magic, travel, making things" },
     ] as L10n[],
   },
 
@@ -119,6 +120,13 @@ export const site = {
         summary: {
           ja: "Webサイトの企画・制作・運用。要件の整理から実装、公開後の改善まで一貫して対応します。",
           en: "Planning, building, and running websites — from organizing requirements through implementation to post-launch improvement.",
+        },
+      },
+      {
+        title: { ja: "生成AI活用・自動化", en: "Generative AI & Automation" },
+        summary: {
+          ja: "生成AIを日々使い込み、開発・制作・調査・自動化に活用します。そのノウハウを共有する講座（AI自走塾）も運営しています。",
+          en: "I work with generative AI daily — applying it to development, production, research, and automation — and run a course (SelfPilot AI) to share the know-how.",
         },
       },
       {
@@ -342,6 +350,17 @@ export const site = {
         },
         link: "https://www.immersivenavi.com/",
       },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "HAZE coffee", en: "HAZE coffee" },
+        meta: { ja: "コーヒー・ARG", en: "Coffee / ARG" },
+        summary: {
+          ja: "謎解きが付属したスペシャルティコーヒー。一杯に謎解き（ARG）を組み合わせ、「記憶に残る一杯」の体験をつくる。",
+          en: "Specialty coffee with a built-in puzzle — an ARG paired with a cup, for a brew you remember.",
+        },
+        link: "https://hazecoffee.sub.jp",
+      },
       // --- その他 other ---
       {
         group: "other" as WorkGroup,
@@ -458,6 +477,18 @@ export const site = {
         },
         kind: "career",
       },
+      {
+        year: "2019",
+        title: {
+          ja: "中国科学院（北京）訪問研究",
+          en: "Visiting research, Chinese Academy of Sciences (Beijing)",
+        },
+        detail: {
+          ja: "約2ヶ月の短期留学。天体物理の共同研究に従事。",
+          en: "A two-month research stay in astrophysics.",
+        },
+        kind: "career",
+      },
       // --- 受賞・助成 award ---
       {
         year: "20XX", // ⚠ 記入
@@ -483,8 +514,8 @@ export const site = {
   contact: {
     heading: { ja: "連絡先", en: "Contact" },
     lead: {
-      ja: "お問い合わせ・ご依頼はこちらから。",
-      en: "For inquiries and requests, reach me here.",
+      ja: "お問い合わせ・ご依頼はこちらから。海外・英語でのご相談も歓迎です。",
+      en: "For inquiries and requests, reach me here — inquiries in English are welcome.",
     },
     email: "shumpei.nagoshi@cosmic-magic.com",
     // フッターに小さく載せるSNSリンク（連絡先本体はメールのみ）。
