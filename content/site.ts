@@ -129,10 +129,17 @@ export const site = {
         },
       },
       {
-        title: { ja: "マジック・パフォーマンス", en: "Magic & Performance" },
+        title: { ja: "体験設計・演出", en: "Experience Design & Direction" },
         summary: {
-          ja: "イベントや場での実演と、体験の設計。人の関心を引き、記憶に残る時間をつくります。",
-          en: "Live performance for events and gatherings, and the design of the experience itself — drawing attention and creating memorable moments.",
+          ja: "マジックで培った体験構成力を土台に、イベントや場の演出、実演、そして人の関心を引き記憶に残る体験の設計まで。",
+          en: "Drawing on the experience-composition skills honed through magic — directing events and spaces, performing, and designing moments people remember.",
+        },
+      },
+      {
+        title: { ja: "ものづくり・プロトタイピング", en: "Making & Prototyping" },
+        summary: {
+          ja: "電子工作や3Dプリンターを使って、アイデアを素早く試作し形にすること。ソフトからハードまで手を動かします。",
+          en: "Using electronics and 3D printing to prototype ideas quickly and make them real — hands-on from software to hardware.",
         },
       },
     ] as CapabilityItem[],
