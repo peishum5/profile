@@ -28,6 +28,11 @@ export async function generateMetadata({
         ? "研究・経歴・マジック・成果物。名越俊平の人物像がわかる個人サイト。"
         : "Research, CV, magic, and works — the personal site of Shumpei Nagoshi.",
       type: "website",
+      images: [{ url: "/og.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/og.png"],
     },
   };
 }

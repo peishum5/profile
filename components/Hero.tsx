@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { site, type Lang } from "@/content/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -15,6 +15,8 @@ const index = [
 ] as const;
 
 export default function Hero({ lang }: { lang: Lang }) {
+  const reduce = useReducedMotion();
+
   return (
     <section
       id="top"
@@ -46,7 +48,7 @@ export default function Hero({ lang }: { lang: Lang }) {
                     href={`#${i.key}`}
                     className="group inline-flex items-baseline gap-2 text-xs text-ink-soft transition-colors hover:text-accent"
                   >
-                    <span className="text-ink-faint">{i.n}</span>
+                    <span className="text-ink-faint tabular-nums">{i.n}</span>
                     {site.ui.nav[i.key][lang]}
                   </a>
                 </li>
@@ -55,40 +57,75 @@ export default function Hero({ lang }: { lang: Lang }) {
           </motion.nav>
         </div>
 
-        {/* name — vertically centered in the remaining space */}
+        {/* name — vertically centered, with the vertical tagline filling the
+            right edge on desktop (a distinctly Japanese editorial gesture) */}
         <div className="my-auto">
-          <h1 className="text-ink">
-            <motion.span
-              className={`${lang === "ja" ? "display-ja" : "display"} block text-[clamp(2.4rem,7vw,5.5rem)]`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.05, ease }}
-            >
-              {lang === "ja" ? "名越 俊平" : "Shumpei"}
-            </motion.span>
-            <motion.span
-              className="display mt-1 block text-[clamp(1.9rem,5.2vw,4rem)] italic text-accent md:-mt-1"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.16, ease }}
-            >
-              {lang === "ja" ? "Shumpei Nagoshi" : "Nagoshi"}
-            </motion.span>
-          </h1>
+          <div className="flex items-stretch justify-between gap-10">
+            <h1 className="text-ink">
+              <motion.span
+                className={`${lang === "ja" ? "display-ja" : "display"} block text-[clamp(2.6rem,9vw,7rem)]`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.05, ease }}
+              >
+                {lang === "ja" ? "名越 俊平" : "Shumpei"}
+              </motion.span>
+              <motion.span
+                className="display mt-2 block text-[clamp(1.8rem,5.5vw,4.2rem)] italic text-accent"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.18, ease }}
+              >
+                {lang === "ja" ? "Shumpei Nagoshi" : "Nagoshi"}
+              </motion.span>
+            </h1>
 
-          {/* bottom band: tagline then intro, stacked */}
+            {lang === "ja" && (
+              <motion.p
+                aria-hidden
+                className="hidden shrink-0 self-center font-serif text-lg tracking-[0.3em] text-ink-soft [writing-mode:vertical-rl] md:block"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.35, ease }}
+              >
+                {site.tagline.ja}
+              </motion.p>
+            )}
+          </div>
+
+          {/* bottom band: tagline (horizontal where not shown vertically),
+              reading, then meta + scroll cue */}
           <motion.div
-            className="mt-10 border-t border-line pt-8"
+            className="mt-10 border-t border-line pt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.34, ease }}
+            transition={{ duration: 0.8, delay: 0.5, ease }}
           >
-            <p className="font-serif text-lg leading-relaxed text-ink md:text-xl">
+            <p
+              className={`font-serif text-lg leading-relaxed text-ink md:text-xl ${
+                lang === "ja" ? "md:hidden" : ""
+              }`}
+            >
               {site.tagline[lang]}
             </p>
-            <p className="mt-2 text-xs tracking-wide text-ink-faint">
+            <p className={`text-xs tracking-wide text-ink-faint ${lang === "ja" ? "mt-2 md:mt-0" : "mt-2"}`}>
               {site.nameReading[lang]}
             </p>
+            <div className="mt-6 flex items-baseline justify-between gap-4">
+              <p className="eyebrow tabular-nums">
+                Kyoto, Japan — 35.01°N 135.77°E
+              </p>
+              <a href="#about" className="eyebrow transition-colors hover:text-accent">
+                {site.ui.scroll[lang]}{" "}
+                <motion.span
+                  className="inline-block"
+                  animate={reduce ? undefined : { y: [0, 5, 0] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  ↓
+                </motion.span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
