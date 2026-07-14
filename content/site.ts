@@ -525,8 +525,8 @@ export const site = {
   contact: {
     heading: { ja: "連絡先", en: "Contact" },
     lead: {
-      ja: "お問い合わせ・ご依頼はこちらから。海外・英語でのご相談も歓迎です。",
-      en: "For inquiries and requests, reach me here — inquiries in English are welcome.",
+      ja: "お問い合わせ・ご依頼はこちらから。",
+      en: "For inquiries and requests, reach me here.",
     },
     email: "shumpei.nagoshi@cosmic-magic.com",
     // フッターに小さく載せるSNSリンク（連絡先本体はメールのみ）。
