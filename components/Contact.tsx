@@ -11,7 +11,7 @@ export default function Contact({ lang }: { lang: Lang }) {
         <Reveal>
           <header className="mb-10 md:mb-14">
             <p className="eyebrow mb-3">
-              <span className="text-accent">10</span>
+              <span className="text-accent">06</span>
               <span className="mx-2 text-line">/</span>
               Contact
             </p>

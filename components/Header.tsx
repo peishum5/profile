@@ -7,11 +7,7 @@ import { site, type Lang } from "@/content/site";
 const sections = [
   "about",
   "capabilities",
-  "ventures",
-  "research",
   "works",
-  "talks",
-  "magic",
   "cv",
   "blog",
   "contact",
@@ -47,7 +43,7 @@ export default function Header({ lang }: { lang: Lang }) {
         </Link>
 
         {/* desktop nav */}
-        <nav className="hidden items-center gap-5 md:flex lg:gap-6">
+        <nav className="hidden items-center gap-7 md:flex">
           {sections.map((s) => (
             <a
               key={s}

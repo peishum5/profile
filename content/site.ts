@@ -20,11 +20,15 @@ export type ResearchItem = {
   link?: string;
 };
 
+// 成果物の小カテゴリ
+export type WorkGroup = "research" | "magic" | "service" | "other";
+
 export type WorkItem = {
+  group: WorkGroup;
   year: string;
   title: L10n;
-  category: L10n; // Web / プロダクト / 研究ツール など
   summary: L10n;
+  meta?: L10n; // 補足（掲載誌・媒体など）
   link?: string;
 };
 
@@ -39,7 +43,8 @@ export type CVItem = {
   year: string;
   title: L10n;
   detail: L10n;
-  kind: "education" | "career" | "award";
+  kind: "education" | "career" | "award" | "venture";
+  link?: string;
 };
 
 export type Social = { label: string; url: string };
@@ -125,37 +130,6 @@ export const site = {
         },
       },
     ] as CapabilityItem[],
-  },
-
-  // --- Ventures 運営中の事業 --------------------------------------------------
-  // いま運営している事業の箱。1件 = カード1枚。
-  // 追記は items に { title, tag, summary, link? } を足すだけ。link でサイトへ。
-  ventures: {
-    heading: { ja: "運営中の事業", en: "Ventures" },
-    lead: {
-      ja: "いま運営している事業。",
-      en: "Businesses I currently run.",
-    },
-    items: [
-      {
-        title: { ja: "AI自走塾", en: "SelfPilot AI" },
-        tag: { ja: "AI教育", en: "AI Education" },
-        summary: {
-          ja: "個人事業主・小規模事業者向けのAI講座。土日2日間で自分のホームページを完成・公開し、AIを日々の仕事に活かせるようにする「自走」支援プログラム。",
-          en: "An AI program for solo owners and small businesses — build and publish your own website in a weekend, and learn to make AI a daily tool.",
-        },
-        link: "https://selfpilotai.com/",
-      },
-      {
-        title: { ja: "OTAtrip Guide", en: "OTAtrip Guide" },
-        tag: { ja: "旅行・観光", en: "Travel" },
-        summary: {
-          ja: "京都の地元ガイドによる少人数制ウォーキングツアー。夜の酒場めぐりや路地・文化スポットなど、観光地では出会えない「内側の京都」を案内する。",
-          en: "Small-group walking tours led by local Kyoto guides — hidden bars, backstreets, and culture that ordinary sightseeing misses.",
-        },
-        link: "https://www.otatrip.guide",
-      },
-    ] as VentureItem[],
   },
 
   // --- Research 研究成果 -------------------------------------------------------
@@ -273,64 +247,8 @@ export const site = {
         role: { ja: "共著", en: "Co-author" },
       },
     ] as PubItem[],
-  },
-
-  // --- Works 成果物 -----------------------------------------------------------
-  // 趣味の制作物・作ったものを入れる箱。1件 = カード1枚。
-  // 追記は items に { year, title, category, summary, link? } を足すだけ。
-  //   category は自由記入のタグ（例: 趣味 / Web / プロダクト / ツール）。
-  //   link を入れると「詳しく↗」リンクになります。thumb 画像は後日差し替え。
-  works: {
-    heading: { ja: "成果物", en: "Works" },
-    lead: {
-      ja: "仕事・趣味を問わず、これまで作ってきたもの。Webサイト、プロダクト、ツール、実験的な制作物など。",
-      en: "Things I've made — for work and for fun: websites, products, tools, and experiments.",
-    },
-    items: [
-      {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
-        category: { ja: "趣味", en: "Hobby" },
-        summary: {
-          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
-          en: "One or two lines: what it is, why you made it, and how.",
-        },
-        link: undefined,
-      },
-      {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
-        category: { ja: "Web", en: "Web" },
-        summary: {
-          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
-          en: "One or two lines: what it is, why you made it, and how.",
-        },
-        link: undefined,
-      },
-      {
-        year: "20XX", // ⚠ 記入
-        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
-        category: { ja: "ツール", en: "Tool" },
-        summary: {
-          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
-          en: "One or two lines: what it is, why you made it, and how.",
-        },
-        link: undefined,
-      },
-    ] as WorkItem[],
-  },
-
-  // --- Talks 発表したもの -----------------------------------------------------
-  // 登壇・発表・掲載・出演・公開したものを入れる箱（学術論文は「研究」に掲載済み）。
-  // 追記は items に { year, title, venue, role, link? } を足すだけ。
-  //   role は種別タグ（例: 登壇 / 掲載 / 出演 / 公開）。
-  talks: {
-    heading: { ja: "発表・掲載", en: "Talks & Features" },
-    lead: {
-      ja: "登壇・発表・メディア掲載・出演など、外に向けて出したもの。",
-      en: "Talks, presentations, media features, and appearances.",
-    },
-    items: [
+    // プレスリリース（京都大学）
+    press: [
       {
         year: "2024",
         title: {
@@ -352,6 +270,41 @@ export const site = {
         link: "https://www.kyoto-u.ac.jp/ja/research-news/2022-08-31",
       },
     ] as PubItem[],
+  },
+
+  // --- Works（成果物）の サービス / その他 グループ -----------------------------
+  // 成果物セクションは「研究・マジック・サービス・その他」の小カテゴリで構成。
+  // 研究＝research、マジック＝magic を流用。ここには service / other を入れる。
+  // 追記は items に { group, year, title, summary, meta?, link? } を足すだけ。
+  //   group は "service"（サービス）か "other"（その他）。
+  works: {
+    heading: { ja: "成果物", en: "Works" },
+    lead: {
+      ja: "これまでの成果を、研究・マジック・サービス・その他に分けてまとめています。",
+      en: "My output, grouped into research, magic, services, and other.",
+    },
+    items: [
+      {
+        group: "service" as WorkGroup,
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（サービス・プロダクトを追加）", en: "(Add a service or product)" },
+        summary: {
+          ja: "何を提供するか・誰向けかを1〜2行で。",
+          en: "One or two lines: what it offers and for whom.",
+        },
+        link: undefined,
+      },
+      {
+        group: "other" as WorkGroup,
+        year: "20XX", // ⚠ 記入
+        title: { ja: "（制作物を追加）", en: "(Add a creation)" },
+        summary: {
+          ja: "何を・なぜ作ったか、使った技術などを1〜2行で。",
+          en: "One or two lines: what it is, why you made it, and how.",
+        },
+        link: undefined,
+      },
+    ] as WorkItem[],
   },
 
   // --- Magic マジック実績 -----------------------------------------------------
@@ -463,6 +416,27 @@ export const site = {
         detail: { ja: "賞・助成の名称、主催", en: "Name of award/grant, organizer" },
         kind: "award",
       },
+      // --- 現在進行中の事業 venture（year は空。「運営中」と表示） ---
+      {
+        year: "",
+        title: { ja: "AI自走塾", en: "SelfPilot AI" },
+        detail: {
+          ja: "個人事業主・小規模事業者向けのAI講座。土日2日間でホームページを完成・公開し、AIを日々の仕事に活かせるようにする支援プログラム。",
+          en: "An AI program for solo owners and small businesses — build and publish a website in a weekend, and make AI a daily tool.",
+        },
+        kind: "venture",
+        link: "https://selfpilotai.com/",
+      },
+      {
+        year: "",
+        title: { ja: "OTAtrip Guide", en: "OTAtrip Guide" },
+        detail: {
+          ja: "京都の地元ガイドによる少人数制ウォーキングツアー。観光地では出会えない「内側の京都」を案内する。",
+          en: "Small-group walking tours led by local Kyoto guides — the hidden, inside Kyoto.",
+        },
+        kind: "venture",
+        link: "https://www.otatrip.guide",
+      },
     ] as CVItem[],
   },
 
@@ -497,11 +471,7 @@ export const site = {
     nav: {
       about: { ja: "プロフィール", en: "Profile" },
       capabilities: { ja: "できること", en: "Capabilities" },
-      ventures: { ja: "事業", en: "Ventures" },
-      research: { ja: "研究", en: "Research" },
       works: { ja: "成果物", en: "Works" },
-      talks: { ja: "発表", en: "Talks" },
-      magic: { ja: "マジック", en: "Magic" },
       cv: { ja: "経歴", en: "CV" },
       blog: { ja: "ブログ", en: "Writing" },
       contact: { ja: "連絡先", en: "Contact" },
@@ -518,7 +488,15 @@ export const site = {
     education: { ja: "学歴", en: "Education" },
     career: { ja: "職歴", en: "Career" },
     award: { ja: "受賞", en: "Award" },
+    venture: { ja: "事業", en: "Ventures" },
   } as Record<CVItem["kind"], L10n>,
+
+  workGroupLabel: {
+    research: { ja: "研究", en: "Research" },
+    magic: { ja: "マジック", en: "Magic" },
+    service: { ja: "サービス", en: "Services" },
+    other: { ja: "その他", en: "Other" },
+  } as Record<WorkGroup, L10n>,
 } as const;
 
 export type Site = typeof site;

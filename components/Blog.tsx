@@ -9,7 +9,7 @@ export default async function Blog({ lang }: { lang: Lang }) {
   return (
     <Section
       id="blog"
-      index="09"
+      index="05"
       eyebrow="Writing"
       heading={site.blog.heading[lang]}
       lead={site.blog.lead[lang]}
