@@ -27,6 +27,7 @@ export default async function Blog({ lang }: { lang: Lang }) {
         </Reveal>
       ) : (
         <>
+          {/* index-of-writing: one baseline per post, no excerpts */}
           <div>
             {posts.map((p, i) => (
               <Reveal key={p.url} delay={i * 0.03}>
@@ -34,20 +35,15 @@ export default async function Blog({ lang }: { lang: Lang }) {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group grid gap-1 border-t border-line py-6 md:grid-cols-[8rem_1fr] md:gap-8"
+                  className="group flex items-baseline gap-5 border-t border-line py-4 md:gap-8"
                 >
-                  <div className="text-sm text-ink-faint md:pt-1">{p.date}</div>
-                  <div>
-                    <h3 className="font-serif text-lg text-ink transition-colors group-hover:text-accent md:text-xl">
-                      {p.title}
-                      <span className="ml-2 text-accent">↗</span>
-                    </h3>
-                    {p.excerpt && (
-                      <p className="jp-wrap mt-1 text-sm leading-relaxed text-ink-soft">
-                        {p.excerpt}…
-                      </p>
-                    )}
-                  </div>
+                  <span className="w-20 shrink-0 text-xs tracking-wide text-ink-faint tabular-nums md:w-24">
+                    {p.date}
+                  </span>
+                  <h3 className="jp-wrap min-w-0 flex-1 font-serif text-base text-ink transition-colors group-hover:text-accent md:text-lg">
+                    {p.title}
+                  </h3>
+                  <span className="text-accent">↗</span>
                 </a>
               </Reveal>
             ))}

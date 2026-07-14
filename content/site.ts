@@ -382,14 +382,10 @@ export const site = {
       ja: "マジシャンとしての受賞・出演・評価。", // ⚠
       en: "Awards, appearances, and recognition as a magician.",
     },
-    // 大きく見せる「評価の声 / 引用」
-    quote: {
-      text: {
-        ja: "（引用・評価コメントのプレースホルダー）観客や審査からの評価の言葉をここに置きます。", // ⚠
-        en: "(Placeholder for a quote) A line of praise from an audience or a judge goes here.",
-      },
-      source: { ja: "── 出典（要確認）", en: "— Source (to confirm)" },
-    },
+    // 大きく見せる「評価の声 / 引用」。実テキストが決まるまで null（null の間は
+    // ページに表示されない）。表示する時は以下の形で設定:
+    // quote: { text: { ja: "...", en: "..." }, source: { ja: "── 出典", en: "— Source" } }
+    quote: null as null | { text: L10n; source: L10n },
     items: [
       {
         year: "2022",

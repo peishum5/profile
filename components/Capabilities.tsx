@@ -1,7 +1,9 @@
 import Section from "@/components/Section";
-import Entry from "@/components/Entry";
+import Reveal from "@/components/Reveal";
 import { site, type Lang } from "@/content/site";
 
+/** Numbered two-column grid — the page's first rhythm break after the prose
+ *  About section. No card backgrounds: hairlines and whitespace only. */
 export default function Capabilities({ lang }: { lang: Lang }) {
   return (
     <Section
@@ -11,16 +13,27 @@ export default function Capabilities({ lang }: { lang: Lang }) {
       heading={site.capabilities.heading[lang]}
       lead={site.capabilities.lead[lang]}
       lang={lang}
+      tone="deep"
     >
-      <div>
+      <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
         {site.capabilities.items.map((item, i) => (
-          <Entry
+          <Reveal
             key={i}
-            delay={i * 0.05}
-            label={String(i + 1).padStart(2, "0")}
-            title={item.title[lang]}
-            body={item.summary[lang]}
-          />
+            delay={(i % 2) * 0.08}
+            className={i === site.capabilities.items.length - 1 && i % 2 === 0 ? "md:col-span-2" : ""}
+          >
+            <div className="border-t border-line pt-5">
+              <div className="display text-[2.6rem] leading-none text-ink-faint/60 tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </div>
+              <h3 className="mt-3 font-serif text-lg text-ink md:text-xl">
+                {item.title[lang]}
+              </h3>
+              <p className="jp-wrap mt-2 max-w-prose text-sm leading-relaxed text-ink-soft">
+                {item.summary[lang]}
+              </p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </Section>

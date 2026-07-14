@@ -119,6 +119,30 @@ body::after {
   letter-spacing: 0.01em;
 }
 
+/* large closing CTA link — vermilion underline grows in from the left */
+.cta-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cta-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.12em;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-link:hover::after,
+.cta-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
