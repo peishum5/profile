@@ -20,7 +20,7 @@ export default function Hero({ lang }: { lang: Lang }) {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col px-6 pt-28 pb-10 md:px-10"
+      className="relative flex min-h-[72svh] flex-col px-6 pt-28 pb-8 md:px-10"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col">
         {/* top row: eyebrow + section index */}
@@ -59,11 +59,11 @@ export default function Hero({ lang }: { lang: Lang }) {
 
         {/* name — vertically centered, with the vertical tagline filling the
             right edge on desktop (a distinctly Japanese editorial gesture) */}
-        <div className="my-auto">
+        <div className="my-auto pt-10">
           <div className="flex items-stretch justify-between gap-10">
             <h1 className="text-ink">
               <motion.span
-                className={`${lang === "ja" ? "display-ja" : "display"} block text-[clamp(2.6rem,9vw,7rem)]`}
+                className={`${lang === "ja" ? "display-ja" : "display"} block text-[clamp(2.4rem,7.5vw,5.5rem)]`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.05, ease }}
@@ -71,7 +71,7 @@ export default function Hero({ lang }: { lang: Lang }) {
                 {lang === "ja" ? "名越 俊平" : "Shumpei"}
               </motion.span>
               <motion.span
-                className="display mt-2 block text-[clamp(1.8rem,5.5vw,4.2rem)] italic text-accent"
+                className="display mt-1 block text-[clamp(1.7rem,4.6vw,3.4rem)] italic text-accent"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.18, ease }}
@@ -83,7 +83,7 @@ export default function Hero({ lang }: { lang: Lang }) {
             {lang === "ja" && (
               <motion.p
                 aria-hidden
-                className="hidden shrink-0 self-center font-serif text-lg tracking-[0.3em] text-ink-soft [writing-mode:vertical-rl] md:block"
+                className="hidden shrink-0 self-center font-serif text-base tracking-[0.24em] text-ink-soft [writing-mode:vertical-rl] md:block"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.35, ease }}
@@ -96,7 +96,7 @@ export default function Hero({ lang }: { lang: Lang }) {
           {/* bottom band: tagline (horizontal where not shown vertically),
               reading, then meta + scroll cue */}
           <motion.div
-            className="mt-10 border-t border-line pt-6"
+            className="mt-7 border-t border-line pt-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease }}
@@ -111,7 +111,7 @@ export default function Hero({ lang }: { lang: Lang }) {
             <p className={`text-xs tracking-wide text-ink-faint ${lang === "ja" ? "mt-2 md:mt-0" : "mt-2"}`}>
               {site.nameReading[lang]}
             </p>
-            <div className="mt-6 flex items-baseline justify-between gap-4">
+            <div className="mt-4 flex items-baseline justify-between gap-4">
               <p className="eyebrow tabular-nums">
                 Kyoto, Japan — 35.01°N 135.77°E
               </p>

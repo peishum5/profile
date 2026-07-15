@@ -35,7 +35,7 @@ export default async function Blog({ lang }: { lang: Lang }) {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-baseline gap-5 border-t border-line py-4 md:gap-8"
+                  className="group flex items-baseline gap-5 border-t border-line py-3 md:gap-8"
                 >
                   <span className="w-20 shrink-0 text-xs tracking-wide text-ink-faint tabular-nums md:w-24">
                     {p.date}

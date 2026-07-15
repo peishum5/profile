@@ -17,12 +17,12 @@ function GroupHeading({
   first?: boolean;
 }) {
   return (
-    <div className={first ? "" : "mt-20"}>
+    <div className={first ? "" : "mt-12"}>
       <Reveal variant="rule">
         <div className="h-px w-full bg-ink/25" />
       </Reveal>
       <Reveal>
-        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 pt-3 pb-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 pt-3 pb-3">
           <h3 className="flex items-baseline gap-3 font-serif text-xl text-ink md:text-2xl">
             <span className="text-sm text-accent tabular-nums">{index}</span>
             {label}

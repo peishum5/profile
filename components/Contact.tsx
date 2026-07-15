@@ -24,7 +24,7 @@ export default function Contact({ lang }: { lang: Lang }) {
       </Reveal>
 
       <Reveal>
-        <div className="mt-16 border-t border-line pt-6 text-right">
+        <div className="mt-12 border-t border-line pt-5 text-right">
           <a href="#top" className="eyebrow transition-colors hover:text-accent">
             {lang === "ja" ? "↑ 上へ" : "↑ Top"}
           </a>

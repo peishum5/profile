@@ -25,7 +25,7 @@ export default function CV({ lang }: { lang: Lang }) {
       heading={site.cv.heading[lang]}
       lang={lang}
     >
-      <div className="grid gap-x-16 gap-y-14 md:grid-cols-2">
+      <div className="grid gap-x-16 gap-y-10 md:grid-cols-2">
         {groups.map((group, gi) => (
           <Reveal key={group.kind} delay={gi * 0.08}>
             <div>
@@ -43,7 +43,7 @@ export default function CV({ lang }: { lang: Lang }) {
                   return (
                     <li
                       key={i}
-                      className="flex items-baseline gap-4 border-t border-line py-3 first:border-t-0"
+                      className="flex items-baseline gap-4 border-t border-line py-2.5 first:border-t-0"
                     >
                       <span className="w-12 shrink-0 text-xs tracking-wide text-ink-faint tabular-nums">
                         {label}

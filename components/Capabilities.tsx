@@ -15,21 +15,21 @@ export default function Capabilities({ lang }: { lang: Lang }) {
       lang={lang}
       tone="deep"
     >
-      <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
+      <div className="grid gap-x-12 gap-y-7 md:grid-cols-2">
         {site.capabilities.items.map((item, i) => (
           <Reveal
             key={i}
             delay={(i % 2) * 0.08}
             className={i === site.capabilities.items.length - 1 && i % 2 === 0 ? "md:col-span-2" : ""}
           >
-            <div className="border-t border-line pt-5">
-              <div className="display text-[2.6rem] leading-none text-ink-faint/60 tabular-nums">
+            <div className="border-t border-line pt-4">
+              <div className="display text-[2rem] leading-none text-ink-faint/60 tabular-nums">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <h3 className="mt-3 font-serif text-lg text-ink md:text-xl">
+              <h3 className="mt-2 font-serif text-base text-ink md:text-lg">
                 {item.title[lang]}
               </h3>
-              <p className="jp-wrap mt-2 max-w-prose text-sm leading-relaxed text-ink-soft">
+              <p className="jp-wrap mt-1.5 max-w-prose text-sm leading-relaxed text-ink-soft">
                 {item.summary[lang]}
               </p>
             </div>

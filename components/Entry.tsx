@@ -24,7 +24,7 @@ export default function Entry({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-baseline gap-2 font-serif text-lg text-ink transition-colors hover:text-accent focus-visible:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-xl"
+      className="group inline-flex items-baseline gap-2 font-serif text-base text-ink transition-colors hover:text-accent focus-visible:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-lg"
     >
       <span className="underline decoration-transparent decoration-1 underline-offset-4 transition-colors group-hover:decoration-accent/40">
         {title}
@@ -32,20 +32,20 @@ export default function Entry({
       <span className="text-accent">↗</span>
     </a>
   ) : (
-    <h3 className="font-serif text-lg text-ink md:text-xl">{title}</h3>
+    <h3 className="font-serif text-base text-ink md:text-lg">{title}</h3>
   );
 
   return (
     <Reveal delay={delay}>
-      <div className="grid gap-1 border-t border-line py-6 md:grid-cols-[8rem_1fr] md:gap-8">
-        <div className="text-sm tracking-wide text-ink-faint tabular-nums md:pt-1.5">
+      <div className="grid gap-1 border-t border-line py-4 md:grid-cols-[8rem_1fr] md:gap-8">
+        <div className="text-sm tracking-wide text-ink-faint tabular-nums md:pt-1">
           {label}
         </div>
         <div>
           {titleEl}
-          {meta && <p className="mt-1 text-sm text-ink-faint">{meta}</p>}
+          {meta && <p className="mt-0.5 text-sm text-ink-faint">{meta}</p>}
           {body && (
-            <p className="jp-wrap mt-2 text-sm leading-relaxed text-ink-soft">
+            <p className="jp-wrap mt-1.5 text-sm leading-relaxed text-ink-soft">
               {body}
             </p>
           )}
