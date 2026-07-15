@@ -88,22 +88,14 @@ export const site = {
   about: {
     heading: { ja: "プロフィール", en: "Profile" },
     body: {
-      ja: "京都大学大学院で宇宙物理学（超巨大ブラックホールの光度変動）を研究し、大規模な観測データの解析をもとに複数の査読論文を筆頭著者として発表してきました。数字と根拠にもとづいて考え、複雑なものを整理して伝わる形にすることを大切にしています。現在は、その姿勢を土台に、Webサイトやコンテンツの制作、マジックを用いた表現・場づくりに携わっています。",
-      en: "At the Kyoto University Graduate School I researched astrophysics — the luminosity variations of supermassive black holes — publishing several peer-reviewed papers as first author from the analysis of large observational datasets. I work from evidence and numbers, and value turning complex material into a clear, communicable form. Today I apply that approach to web and content production, and to performance and events as a magician.",
+      ja: "体験型コンテンツの製作（日本語・英語）や、企業向けにR&D（画像認識AIの構築や、データ基盤の構築）を行なっています。",
+      en: "I create experiential content (in Japanese and English) and carry out R&D for companies — building image-recognition AI and data infrastructure.",
     },
-    // 自己紹介（趣味・出身・人となり）。⚠ 事実に基づく下書き。ご自身の言葉で自由に書き換えてください。
+    // 自己紹介（出身・歩み・人となり）
     personal: {
-      ja: "鹿児島生まれ。幼稚園の4年間をインドネシア・スラバヤで、小学校の3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、京都大学へ。大学院では宇宙物理学を研究し、北京・中国科学院への短期留学や海外での学会発表も経験しました。いまは生成AIを毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。数字で丁寧に考えることも、人前で驚かせることも、どちらも同じくらい好きです。",
-      en: "Born in Kagoshima. I spent four years of early childhood in Surabaya, Indonesia, and three primary-school years on a remote island so small there were no classmates my age. From junior high I attended La Salle, then Kyoto University. In graduate school I researched astrophysics, with a short research stay at the Chinese Academy of Sciences in Beijing and talks at international conferences. These days I use generative AI almost daily while following my curiosity across magic, travel, and making things. I enjoy thinking carefully with numbers and surprising people in person in equal measure.",
+      ja: "鹿児島で生まれ、幼稚園の4年間をインドネシア・スラバヤで、小学校のうち3年間は同級生もいないような離島で過ごしました。中学からラ・サールへ進み、京都大学理学部へ。大学時代はマジックにのめり込み、マジックバーに出演したり、コンテストに出たりしていました。大学院では宇宙物理学の研究に没頭し、超巨大ブラックホールの光度変動を利用した研究で博士号を取得しました。いまは生成AIに惚れ込んで毎日のように使い込みながら、マジック・旅・ものづくりと、興味の向くままに手を動かしています。物理的な緻密な議論も、マジックのようになんでもありで実現するような大胆なことも、両方とも好きです。",
+      en: "Born in Kagoshima, I spent four years of kindergarten in Surabaya, Indonesia, and three years of elementary school on a remote island with no classmates my age. From junior high I attended La Salle, then went on to the Faculty of Science at Kyoto University. As an undergraduate I threw myself into magic, performing at magic bars and entering contests. In graduate school I immersed myself in astrophysics, earning my PhD with research using the luminosity variations of supermassive black holes. These days I am in love with generative AI, using it almost daily, while following my curiosity across magic, travel, and making things. I enjoy both rigorous physical argument and the boldness of making anything happen, as if by magic.",
     },
-    // 箇条書きの「一言でわかる」ハイライト
-    facts: [
-      { ja: "拠点 — 京都", en: "Based in — Kyoto" },
-      { ja: "出身 — 鹿児島県", en: "From — Kagoshima, Japan" },
-      { ja: "専門 — 宇宙物理学（博士）", en: "Field — Astrophysics (PhD)" },
-      { ja: "言語 — 日本語・英語", en: "Languages — Japanese, English" },
-      { ja: "趣味 — マジック・旅・ものづくり", en: "Interests — Magic, travel, making things" },
-    ] as L10n[],
   },
 
   // --- Capabilities できること ------------------------------------------------

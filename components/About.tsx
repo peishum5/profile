@@ -18,15 +18,15 @@ export default function About({ lang }: { lang: Lang }) {
       lang={lang}
     >
       <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_18rem] md:gap-16">
-        {/* left: prose */}
+        {/* left: prose — both paragraphs share the same voice */}
         <div>
           <Reveal>
-            <p className="jp-wrap font-serif text-lg leading-relaxed text-ink">
+            <p className="jp-wrap font-serif text-base leading-relaxed text-ink md:text-lg">
               {site.about.body[lang]}
             </p>
           </Reveal>
           <Reveal delay={0.05}>
-            <p className="jp-wrap mt-5 text-sm leading-relaxed text-ink-soft">
+            <p className="jp-wrap mt-5 font-serif text-base leading-relaxed text-ink md:text-lg">
               {site.about.personal[lang]}
             </p>
           </Reveal>
@@ -48,21 +48,6 @@ export default function About({ lang }: { lang: Lang }) {
           </Reveal>
         )}
       </div>
-
-      {/* facts — a compact spec strip across the full width */}
-      <Reveal>
-        <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-4 border-t border-line pt-5 md:grid-cols-5">
-          {site.about.facts.map((f, i) => {
-            const [key, val] = f[lang].split("—");
-            return (
-              <div key={i}>
-                <dt className="eyebrow">{key?.trim()}</dt>
-                <dd className="mt-1 text-sm text-ink-soft">{val?.trim()}</dd>
-              </div>
-            );
-          })}
-        </dl>
-      </Reveal>
     </Section>
   );
 }
