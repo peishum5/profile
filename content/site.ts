@@ -103,8 +103,8 @@ export const site = {
   capabilities: {
     heading: { ja: "できること", en: "Capabilities" },
     lead: {
-      ja: "研究で培った分析力と、実際に手を動かす制作力の両方でお手伝いできます。",
-      en: "I can help with both the analytical rigor of research and the hands-on work of building things.",
+      ja: "お仕事の依頼を検討してる方向け",
+      en: "For those considering working with me",
     },
     items: [
       {
