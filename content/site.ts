@@ -549,6 +549,19 @@ export const site = {
     ] as Social[],
   },
 
+  // --- Secret 隠しページ --------------------------------------------------------
+  // サイト各所に隠れた ♠♡♢♧ を正しい順にクリックした人だけが辿り着く遊び。
+  // 仕掛けの本体は components/SuitMark.tsx。飛び先の内容は今後拡充予定。
+  secret: {
+    unlocked: { ja: "…お見事。", en: "…Well done." },
+    heading: { ja: "よくぞ見つけました。", en: "You found it." },
+    body: {
+      ja: "ページのあちこちに散らばった4つの印に気づき、正しい順で辿ってくださったあなたは、きっと良い観客です。この扉の先は、いま仕込みの最中。また近いうちに、お越しください。",
+      en: "You noticed four small marks scattered across the page — and touched them in the right order. You make a fine audience. What lies beyond this door is still in preparation. Do come back soon.",
+    },
+    back: { ja: "表紙へ戻る", en: "Back to the cover" },
+  },
+
   // --- UI 文言 ----------------------------------------------------------------
   ui: {
     nav: {

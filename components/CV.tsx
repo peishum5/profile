@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import SuitMark from "@/components/SuitMark";
 import { site, type Lang, type CVItem } from "@/content/site";
 
 // カテゴリの表示順
@@ -76,6 +77,9 @@ export default function CV({ lang }: { lang: Lang }) {
           </Reveal>
         ))}
       </div>
+      <p className="mt-8 text-right">
+        <SuitMark suit="♢" lang={lang} className="text-ink-faint/50" />
+      </p>
     </Section>
   );
 }

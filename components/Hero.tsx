@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { site, type Lang } from "@/content/site";
+import SuitMark from "@/components/SuitMark";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -113,7 +114,8 @@ export default function Hero({ lang }: { lang: Lang }) {
             </p>
             <div className="mt-4 flex items-baseline justify-between gap-4">
               <p className="eyebrow tabular-nums">
-                Kyoto, Japan — 35.01°N 135.77°E
+                Kyoto, Japan — 35.01°N 135.77°E{" "}
+                <SuitMark suit="♠" lang={lang} className="text-ink-faint/50" />
               </p>
               <a href="#about" className="eyebrow transition-colors hover:text-accent">
                 {site.ui.scroll[lang]}{" "}

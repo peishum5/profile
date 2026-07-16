@@ -1,6 +1,7 @@
 import Section from "@/components/Section";
 import Entry from "@/components/Entry";
 import Reveal from "@/components/Reveal";
+import SuitMark from "@/components/SuitMark";
 import { site, type Lang } from "@/content/site";
 
 /** Full-width ruled band: sub-index + group title left, optional meta cluster
@@ -105,7 +106,11 @@ export default function Works({ lang }: { lang: Lang }) {
       </div>
 
       {/* マジック */}
-      <GroupHeading index="03.2" label={site.workGroupLabel.magic[lang]} />
+      <GroupHeading
+        index="03.2"
+        label={site.workGroupLabel.magic[lang]}
+        meta={<SuitMark suit="♡" lang={lang} className="text-ink-faint/50" />}
+      />
       {quote && (
         <Reveal variant="fade">
           <blockquote className="relative mt-2 mb-10 pl-9 md:pl-14">

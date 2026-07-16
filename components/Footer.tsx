@@ -1,3 +1,4 @@
+import SuitMark from "@/components/SuitMark";
 import { site, type Lang } from "@/content/site";
 
 /** Dark colophon — the back cover of the page. */
@@ -16,6 +17,13 @@ export default function Footer({ lang }: { lang: Lang }) {
         </p>
         <div className="mt-10 flex flex-col gap-4 border-t border-paper/10 pt-6 text-xs text-paper/40 md:flex-row md:items-center md:justify-between">
           <span>© {year} {site.name[lang]}</span>
+          {/* コロフォンの飾りに見える並びが、実は謎解きの順番のヒント。♧だけが本物 */}
+          <span className="flex items-center gap-3">
+            <span aria-hidden className="select-none tracking-[0.35em] text-paper/25">
+              ♠ ♡ ♢
+            </span>
+            <SuitMark suit="♧" lang={lang} reveal className="text-paper/25" />
+          </span>
           <div className="flex items-center gap-5">
             {site.contact.socials.map((s) => (
               <a
