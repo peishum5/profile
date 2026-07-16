@@ -17,6 +17,7 @@
      --font-instrument / --font-shippori / --font-zen-kaku are injected by
      next/font on <body>. */
   --stack-display: var(--font-instrument), var(--font-shippori), Georgia, serif;
+  --stack-name: var(--font-cormorant), Georgia, serif;
   --stack-serif: var(--font-shippori), Georgia, serif;
   --stack-sans: var(--font-zen-kaku), system-ui, sans-serif;
 }
@@ -78,6 +79,18 @@ body::after {
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Romanized name under the Japanese display name — Garamond italic carries
+   the calligraphic feel without Instrument Serif's heavier mannerisms.
+   Cormorant is optically small, so it runs at a higher weight. */
+.display-name {
+  font-family: var(--stack-name);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
   text-wrap: balance;
 }
 

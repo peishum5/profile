@@ -71,7 +71,7 @@ export default function Hero({ lang }: { lang: Lang }) {
                 {lang === "ja" ? "名越 俊平" : "Shumpei"}
               </motion.span>
               <motion.span
-                className="display mt-1 block text-[clamp(1.7rem,4.6vw,3.4rem)] italic text-accent"
+                className="display-name mt-1 block text-[clamp(1.7rem,4.6vw,3.4rem)] text-accent"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.18, ease }}

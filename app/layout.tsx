@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Cormorant_Garamond, Instrument_Serif, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 
 // Latin editorial display serif — layered over Shippori for Japanese glyphs.
@@ -8,6 +8,14 @@ const instrument = Instrument_Serif({
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-instrument",
+});
+
+// Classic Garamond italic — reserved for the romanized name in the hero.
+const cormorant = Cormorant_Garamond({
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-cormorant",
 });
 
 // Japanese serif for display + refined body accents.
@@ -51,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${instrument.variable} ${shippori.variable} ${zenKaku.variable}`}
+      className={`${instrument.variable} ${cormorant.variable} ${shippori.variable} ${zenKaku.variable}`}
     >
       <body>{children}</body>
     </html>
