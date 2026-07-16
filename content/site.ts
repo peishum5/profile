@@ -466,8 +466,8 @@ export const site = {
           en: "Preparation for founding a company",
         },
         detail: {
-          ja: "2024年4月〜2024年12月。",
-          en: "Apr 2024 – Dec 2024.",
+          ja: "2024年4月〜2024年12月。フリーランスとして画像認識AIの構築やデータ基盤の構築支援に従事。",
+          en: "Apr 2024 – Dec 2024. Freelance work building image-recognition AI and supporting data-platform development.",
         },
         kind: "career",
       },
