@@ -6,17 +6,16 @@ import { site, type Lang } from "@/content/site";
 
 // ============================================================================
 // 隠しスートの謎解き
-// ページ各所に散らばる ♠♡♢♧ を、この並び（フッターのコロフォンにも印字）の
-// とおりにクリックすると、♧ の隣に隠しページへの扉が現れる。
-// 順を間違えたら静かに振り出しへ戻る。マジックなので種明かしはしない。
+// ページ各所に散らばる ♠♡♢♧ を4つすべてクリックすると（順番は問わない）、
+// ♧ の隣に隠しページへの扉が現れる。マジックなので種明かしはしない。
 // ============================================================================
 
-export const SUIT_ORDER = ["♠", "♡", "♢", "♧"] as const;
-export type Suit = (typeof SUIT_ORDER)[number];
+export const SUITS = ["♠", "♡", "♢", "♧"] as const;
+export type Suit = (typeof SUITS)[number];
 
 // 4つの SuitMark はページ内の別コンポーネントに散らばるため、
-// モジュールスコープの極小ストアで進行状況を共有する。
-let progress = 0;
+// モジュールスコープの極小ストア（ビットマスク）で発見状況を共有する。
+let found = 0;
 const listeners = new Set<() => void>();
 const subscribe = (cb: () => void) => {
   listeners.add(cb);
@@ -24,15 +23,15 @@ const subscribe = (cb: () => void) => {
     listeners.delete(cb);
   };
 };
-const getProgress = () => progress;
-const getServerProgress = () => 0;
+const getFound = () => found;
+const getServerFound = () => 0;
 
 function press(suit: Suit) {
-  if (progress >= SUIT_ORDER.length) return; // 開錠後は固定
-  progress =
-    suit === SUIT_ORDER[progress] ? progress + 1 : suit === SUIT_ORDER[0] ? 1 : 0;
+  found |= 1 << SUITS.indexOf(suit);
   listeners.forEach((cb) => cb());
 }
+
+const ALL_FOUND = (1 << SUITS.length) - 1;
 
 export default function SuitMark({
   suit,
@@ -47,9 +46,9 @@ export default function SuitMark({
   /** 置き場所（明色/暗色背景）に合わせた待機時の色 */
   className?: string;
 }) {
-  const current = useSyncExternalStore(subscribe, getProgress, getServerProgress);
-  const unlocked = current >= SUIT_ORDER.length;
-  const lit = SUIT_ORDER.indexOf(suit) < current; // 正しく押された印は朱色に灯る
+  const current = useSyncExternalStore(subscribe, getFound, getServerFound);
+  const unlocked = current === ALL_FOUND;
+  const lit = (current & (1 << SUITS.indexOf(suit))) !== 0; // 見つけた印は朱色に灯る
 
   return (
     <>
@@ -57,7 +56,7 @@ export default function SuitMark({
         type="button"
         onClick={() => press(suit)}
         aria-label={suit}
-        className={`inline-block select-none text-[0.65rem] leading-none transition-colors duration-500 hover:text-accent motion-reduce:transition-none ${
+        className={`inline-block select-none text-[0.8rem] leading-none transition-colors duration-500 hover:text-accent motion-reduce:transition-none ${
           lit ? "text-accent" : className
         }`}
       >
