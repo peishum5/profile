@@ -510,12 +510,12 @@ export const site = {
       {
         year: "2019",
         title: {
-          ja: "中国科学院（北京）訪問研究",
-          en: "Visiting research, Chinese Academy of Sciences (Beijing)",
+          ja: "中国科学院（北京）訪問研究員",
+          en: "Visiting Researcher, Chinese Academy of Sciences (Beijing)",
         },
         detail: {
-          ja: "約2ヶ月の短期留学。宇宙物理の共同研究に従事。",
-          en: "A two-month research stay in astrophysics.",
+          ja: "宇宙物理の共同研究に従事。",
+          en: "Collaborative research in astrophysics.",
         },
         kind: "career",
       },
