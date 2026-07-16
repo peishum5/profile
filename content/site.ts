@@ -448,6 +448,30 @@ export const site = {
       },
       // --- 職歴 career ---
       {
+        year: "2024",
+        title: {
+          ja: "株式会社Cosmic Magic 設立",
+          en: "Founded Cosmic Magic Inc.",
+        },
+        detail: {
+          ja: "2024年12月 設立。",
+          en: "Founded in December 2024.",
+        },
+        kind: "career",
+      },
+      {
+        year: "2024",
+        title: {
+          ja: "起業準備",
+          en: "Preparation for founding a company",
+        },
+        detail: {
+          ja: "2024年4月〜2024年12月。",
+          en: "Apr 2024 – Dec 2024.",
+        },
+        kind: "career",
+      },
+      {
         year: "2023",
         title: {
           ja: "日本学術振興会 特別研究員（PD）／ 京都大学 理学研究科",
