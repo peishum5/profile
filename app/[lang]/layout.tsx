@@ -20,6 +20,7 @@ export async function generateMetadata({
       ? "名越俊平（Shumpei Nagoshi）の個人サイト。研究成果、経歴（CV）、マジックの実績、そして成果物をまとめています。"
       : "Personal site of Shumpei Nagoshi — scientist, magician, and experience-maker. Research, CV, magic, and works.",
     alternates: {
+      canonical: `/${lang}/`,
       languages: { ja: "/ja/", en: "/en/" },
     },
     openGraph: {
