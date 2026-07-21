@@ -40,8 +40,11 @@ export default async function SecretPage({
       >
         {t.heading[lang]}
       </h1>
-      <p className="jp-wrap mx-auto mt-8 max-w-xl font-serif text-base leading-loose text-ink-soft">
+      <p className="jp-wrap mx-auto mt-8 max-w-xl whitespace-pre-line font-serif text-base leading-loose text-ink-soft">
         {t.body[lang]}
+      </p>
+      <p className="mt-8 font-serif italic text-ink-faint">
+        {t.signature[lang]}
       </p>
       <Link href={`/${lang}/`} className="cta-link eyebrow mt-14 transition-colors hover:text-accent">
         {t.back[lang]} →

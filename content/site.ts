@@ -551,14 +551,19 @@ export const site = {
 
   // --- Secret 隠しページ --------------------------------------------------------
   // サイト各所に隠れた ♠♡♢♧ を4つすべてクリックした人だけが辿り着く遊び。
-  // 仕掛けの本体は components/SuitMark.tsx。飛び先の内容は今後拡充予定。
+  // 仕掛けの本体は components/SuitMark.tsx。本文の \n は改行として表示される
+  // （page.tsx の whitespace-pre-line）。空行＝連（スタンザ）区切り。
   secret: {
     unlocked: { ja: "…お見事。", en: "…Well done." },
-    heading: { ja: "よくぞ見つけました。", en: "You found it." },
-    body: {
-      ja: "ページのあちこちに散らばった4つの印、すべてに気づいてくださったあなたは、きっと良い観客です。この扉の先は、いま仕込みの最中。また近いうちに、お越しください。",
-      en: "You noticed all four small marks scattered across the page. You make a fine audience. What lies beyond this door is still in preparation. Do come back soon.",
+    heading: {
+      ja: "見えないものを、見ようとして。",
+      en: "Trying to see the unseen.",
     },
+    body: {
+      ja: "マジックも、物理の研究も、\n私にとっては同じことでした。\n宇宙の果てのかすかな光の揺らぎも、\n目の前で消えたコインも、\n“ある”のに見えていないだけ。\n\nこの小さな謎を解いたあなたも、\nたぶん、同じ目をしている。",
+      en: "For me, magic and physics were always the same thing.\nThe faint flicker of light from the far edge of the universe,\nand a coin vanishing in your hand —\nboth are there, only unseen.\n\nYou solved this little riddle,\nso perhaps you have the same eyes.",
+    },
+    signature: { ja: "— 俊平", en: "— Shumpei" },
     back: { ja: "表紙へ戻る", en: "Back to the cover" },
   },
 
