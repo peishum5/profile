@@ -34,6 +34,8 @@ jobs:
           # Absolute production URL so metadataBase (OG/canonical URLs)
           # resolves correctly in the static export.
           NEXT_PUBLIC_BASE_URL: "https://peishum5.github.io/profile"
+          # GA4 計測ID。空なら計測タグは出力されない。
+          NEXT_PUBLIC_GA_ID: "G-CL1RJ9HDY7"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

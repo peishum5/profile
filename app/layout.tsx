@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Instrument_Serif, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
+
+// GA4 計測ID（G-XXXXXXXXXX）。ビルド時に環境変数から埋め込む。
+// 未設定なら計測タグは出力されない（＝安全に無効化される）。
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 // Latin editorial display serif — layered over Shippori for Japanese glyphs.
 const instrument = Instrument_Serif({
@@ -62,6 +67,7 @@ export default function RootLayout({
       className={`${instrument.variable} ${cormorant.variable} ${shippori.variable} ${zenKaku.variable}`}
     >
       <body>{children}</body>
+      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }
