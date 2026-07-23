@@ -356,6 +356,17 @@ export const site = {
       {
         group: "service" as WorkGroup,
         year: "",
+        title: { ja: "呪 -NOROI-", en: "NOROI" },
+        meta: { ja: "エンタメ", en: "Entertainment" },
+        summary: {
+          ja: "「その恨み、代わりに呪います」。藁人形に五寸釘を打ち込むオンラインの呪い代行。鬱憤を奉納するデジタル儀式を娯楽として提供する。",
+          en: "\"Your grudge, cursed on your behalf.\" An online curse-by-proxy — drive nails into a digital straw doll, a ritual offered as entertainment.",
+        },
+        link: "https://noroiya.com",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
         title: { ja: "Magic Bar ENCORE", en: "Magic Bar ENCORE" },
         meta: { ja: "ARG", en: "ARG" },
         summary: {
