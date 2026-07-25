@@ -17,19 +17,28 @@ export default function About({ lang }: { lang: Lang }) {
       heading={site.about.heading[lang]}
       lang={lang}
     >
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_18rem] md:gap-16">
-        {/* left: prose — both paragraphs share the same voice */}
+      {/* the portrait column is only reserved when there is a portrait —
+          otherwise the grid would keep an empty 18rem gutter */}
+      <div
+        className={`grid gap-10 md:gap-16 ${
+          hasPortrait ? "md:grid-cols-[minmax(0,1fr)_18rem]" : ""
+        }`}
+      >
+        {/* left: prose — all paragraphs share the same voice */}
         <div>
           <Reveal>
             <p className="jp-wrap font-serif text-base leading-relaxed text-ink md:text-lg">
               {site.about.body[lang]}
             </p>
           </Reveal>
-          <Reveal delay={0.05}>
-            <p className="jp-wrap mt-5 font-serif text-base leading-relaxed text-ink md:text-lg">
-              {site.about.personal[lang]}
-            </p>
-          </Reveal>
+          {/* 空行区切りで段落に分ける（1段落だと長すぎて読めないため） */}
+          {site.about.personal[lang].split("\n\n").map((para, i) => (
+            <Reveal key={i} delay={0.05 + i * 0.04}>
+              <p className="jp-wrap mt-5 font-serif text-base leading-relaxed text-ink md:text-lg">
+                {para}
+              </p>
+            </Reveal>
+          ))}
         </div>
 
         {/* right: portrait */}

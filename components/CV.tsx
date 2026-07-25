@@ -2,9 +2,10 @@ import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import SuitMark from "@/components/SuitMark";
 import { site, type Lang, type CVItem } from "@/content/site";
+import { eyebrow } from "@/lib/ui";
 
-// カテゴリの表示順
-const ORDER: CVItem["kind"][] = ["education", "career", "award"];
+// カテゴリの表示順。該当項目が0件のカテゴリは自動的に非表示になる。
+const ORDER: CVItem["kind"][] = ["education", "career", "award", "venture"];
 
 /** Dense, scannable document — deliberately tighter than Works so adjacent
  *  sections don't share a rhythm. Groups sit side by side on md+. */
@@ -30,17 +31,13 @@ export default function CV({ lang }: { lang: Lang }) {
         {groups.map((group, gi) => (
           <Reveal key={group.kind} delay={gi * 0.08}>
             <div>
-              <h3 className="eyebrow border-b border-ink/25 pb-3">
+              <h3 className={eyebrow(lang, "border-b border-ink/25 pb-3")}>
                 {site.cvKindLabel[group.kind][lang]}
               </h3>
               <ul className="flex flex-col">
                 {group.items.map((item, i) => {
                   const label =
-                    item.kind === "venture"
-                      ? lang === "ja"
-                        ? "運営中"
-                        : "Ongoing"
-                      : item.year;
+                    item.kind === "venture" ? site.ui.ongoing[lang] : item.year;
                   return (
                     <li
                       key={i}

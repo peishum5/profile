@@ -19,20 +19,27 @@ export default function Entry({
   body?: string; // main supporting line (summary / detail)
   delay?: number;
 }) {
-  const titleEl = href ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group inline-flex items-baseline gap-2 font-serif text-base text-ink transition-colors hover:text-accent focus-visible:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-lg"
-    >
-      <span className="underline decoration-transparent decoration-1 underline-offset-4 transition-colors group-hover:decoration-accent/40">
-        {title}
-      </span>
-      <span className="text-accent">↗</span>
-    </a>
-  ) : (
-    <h3 className="font-serif text-base text-ink md:text-lg">{title}</h3>
+  // The link stays inline (not inline-flex) so a title that wraps keeps the ↗
+  // on its last line instead of stranding it at the top right. The no-break
+  // space glues the mark to the final word.
+  const titleEl = (
+    <h4 className="font-serif text-base text-ink md:text-lg">
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group transition-colors hover:text-accent focus-visible:text-accent"
+        >
+          <span className="underline decoration-transparent decoration-1 underline-offset-4 transition-colors group-hover:decoration-accent/40">
+            {title}
+          </span>
+          <span className="text-accent">{"\u00A0↗"}</span>
+        </a>
+      ) : (
+        title
+      )}
+    </h4>
   );
 
   return (

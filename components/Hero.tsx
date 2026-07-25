@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { site, type Lang } from "@/content/site";
+import { eyebrow } from "@/lib/ui";
 import SuitMark from "@/components/SuitMark";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -27,21 +28,23 @@ export default function Hero({ lang }: { lang: Lang }) {
         {/* top row: eyebrow + section index */}
         <div className="flex items-start justify-between">
           <motion.p
-            className="eyebrow"
+            className={eyebrow(lang)}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            {lang === "ja" ? "個人サイト — Portfolio & CV" : "Personal Site — Portfolio & CV"}
+            {site.ui.heroEyebrow[lang]}{" "}
+            {/* the Latin tail keeps the wide small-caps tracking */}
+            <span className="tracking-[0.24em]">— {site.ui.heroEyebrowTail}</span>
           </motion.p>
           <motion.nav
             className="hidden text-right sm:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            aria-label={lang === "ja" ? "目次" : "Index"}
+            aria-label={site.ui.index[lang]}
           >
-            <p className="eyebrow mb-2">{lang === "ja" ? "目次" : "Index"}</p>
+            <p className={eyebrow(lang, "mb-2")}>{site.ui.index[lang]}</p>
             <ul className="flex flex-col gap-1">
               {index.map((i) => (
                 <li key={i.n}>
@@ -112,12 +115,17 @@ export default function Hero({ lang }: { lang: Lang }) {
             <p className={`text-xs tracking-wide text-ink-faint ${lang === "ja" ? "mt-2 md:mt-0" : "mt-2"}`}>
               {site.nameReading[lang]}
             </p>
-            <div className="mt-4 flex items-baseline justify-between gap-4">
+            {/* stacks on phones — side by side the two labels wrap into each
+                other at ~390px */}
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
               <p className="eyebrow tabular-nums">
-                Kyoto, Japan — 35.01°N 135.77°E{" "}
+                {site.location}{" "}
                 <SuitMark suit="♠" lang={lang} className="text-ink-faint/50" />
               </p>
-              <a href="#about" className="eyebrow transition-colors hover:text-accent">
+              <a
+                href="#about"
+                className={eyebrow(lang, "transition-colors hover:text-accent")}
+              >
                 {site.ui.scroll[lang]}{" "}
                 <motion.span
                   className="inline-block"

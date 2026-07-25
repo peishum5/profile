@@ -66,7 +66,18 @@ export default function RootLayout({
       lang="ja"
       className={`${instrument.variable} ${cormorant.variable} ${shippori.variable} ${zenKaku.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {/* The scroll reveals ship as inline opacity:0 and are only cleared
+            once motion hydrates, so without JS the page renders blank. Put
+            everything back at rest. */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html:
+              '<style>[style*="opacity:0"]{opacity:1!important;transform:none!important}</style>',
+          }}
+        />
+        {children}
+      </body>
       {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );

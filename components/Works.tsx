@@ -3,6 +3,7 @@ import Entry from "@/components/Entry";
 import Reveal from "@/components/Reveal";
 import SuitMark from "@/components/SuitMark";
 import { site, type Lang } from "@/content/site";
+import { eyebrow as eyebrowClass } from "@/lib/ui";
 
 /** Full-width ruled band: sub-index + group title left, optional meta cluster
  *  right. The rule draws in on scroll. */
@@ -42,7 +43,7 @@ export default function Works({ lang }: { lang: Lang }) {
 
   const scholarMeta = (
     <span className="tabular-nums">
-      {lang === "ja" ? "被引用数" : "Citations"} {scholar.citations}
+      {site.ui.citations[lang]} {scholar.citations}
       <span className="mx-2 text-line">/</span>h-index {scholar.hIndex}
       <span className="mx-2 text-line">/</span>i10-index {scholar.i10}
       <span className="mx-2 text-line">/</span>
@@ -129,7 +130,9 @@ export default function Works({ lang }: { lang: Lang }) {
             >
               {quote.text[lang]}
             </p>
-            <footer className="eyebrow mt-4">{quote.source[lang]}</footer>
+            <footer className={eyebrowClass(lang, "mt-4")}>
+              {quote.source[lang]}
+            </footer>
           </blockquote>
         </Reveal>
       )}

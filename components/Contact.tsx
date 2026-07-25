@@ -1,6 +1,7 @@
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import { site, type Lang } from "@/content/site";
+import { eyebrow } from "@/lib/ui";
 
 /** The page's closing CTA: the email address itself, set large. */
 export default function Contact({ lang }: { lang: Lang }) {
@@ -16,7 +17,7 @@ export default function Contact({ lang }: { lang: Lang }) {
       <Reveal>
         <a
           href={`mailto:${site.contact.email}`}
-          className="cta-link display break-all text-[clamp(1.3rem,3.5vw,2.4rem)] text-ink transition-colors hover:text-accent focus-visible:text-accent"
+          className="cta-link display break-words text-[clamp(1.3rem,3.5vw,2.4rem)] text-ink transition-colors hover:text-accent focus-visible:text-accent"
         >
           {site.contact.email}
           <span className="ml-2 text-accent">↗</span>
@@ -25,8 +26,11 @@ export default function Contact({ lang }: { lang: Lang }) {
 
       <Reveal>
         <div className="mt-12 border-t border-line pt-5 text-right">
-          <a href="#top" className="eyebrow transition-colors hover:text-accent">
-            {lang === "ja" ? "↑ 上へ" : "↑ Top"}
+          <a
+            href="#top"
+            className={eyebrow(lang, "transition-colors hover:text-accent")}
+          >
+            {site.ui.backToTop[lang]}
           </a>
         </div>
       </Reveal>

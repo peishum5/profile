@@ -15,7 +15,10 @@ export default function Footer({ lang }: { lang: Lang }) {
         <p className="mt-3 font-serif text-sm text-paper/60">
           {site.tagline[lang]}
         </p>
-        <div className="mt-10 flex flex-col gap-4 border-t border-paper/10 pt-6 text-xs text-paper/40 md:flex-row md:items-center md:justify-between">
+        {/* on the dark colophon the vermilion accent drops to ~3:1, so the
+            hover here brightens to paper instead (the one place the site does
+            not use accent for hover) */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-paper/10 pt-6 text-xs text-paper/55 md:flex-row md:items-center md:justify-between">
           <span>© {year} {site.name[lang]}</span>
           {/* 謎解きの4つ目の印。全て見つけると隣に隠しページへの扉が現れる */}
           <span className="flex items-center gap-3">
@@ -28,7 +31,7 @@ export default function Footer({ lang }: { lang: Lang }) {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-accent"
+                className="transition-colors hover:text-paper"
               >
                 {s.label} ↗
               </a>

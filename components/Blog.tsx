@@ -1,6 +1,7 @@
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import { site, type Lang } from "@/content/site";
+import { eyebrow } from "@/lib/ui";
 import { getNotePosts } from "@/lib/note";
 
 export default async function Blog({ lang }: { lang: Lang }) {
@@ -16,14 +17,18 @@ export default async function Blog({ lang }: { lang: Lang }) {
     >
       {posts.length === 0 ? (
         <Reveal>
-          <a
-            href={site.blog.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-t border-line pt-6 text-sm text-ink-soft underline decoration-line underline-offset-4 transition-colors hover:text-accent"
-          >
-            {lang === "ja" ? "note で記事を読む" : "Read on note"} ↗
-          </a>
+          {/* the rule needs a block to sit on — an inline <a> would only draw
+              it across the text */}
+          <div className="border-t border-line pt-6">
+            <a
+              href={site.blog.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-ink-soft underline decoration-line underline-offset-4 transition-colors hover:text-accent"
+            >
+              {site.ui.readOnNote[lang]} ↗
+            </a>
+          </div>
         </Reveal>
       ) : (
         <>
@@ -42,8 +47,8 @@ export default async function Blog({ lang }: { lang: Lang }) {
                   </span>
                   <h3 className="jp-wrap min-w-0 flex-1 font-serif text-base text-ink transition-colors group-hover:text-accent md:text-lg">
                     {p.title}
+                    <span className="text-accent">{"\u00A0↗"}</span>
                   </h3>
-                  <span className="text-accent">↗</span>
                 </a>
               </Reveal>
             ))}
@@ -54,9 +59,9 @@ export default async function Blog({ lang }: { lang: Lang }) {
                 href={site.blog.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="eyebrow transition-colors hover:text-accent"
+                className={eyebrow(lang, "transition-colors hover:text-accent")}
               >
-                {lang === "ja" ? "note で全記事を見る ↗" : "All posts on note ↗"}
+                {site.ui.allPostsOnNote[lang]} ↗
               </a>
             </p>
           </Reveal>

@@ -6,7 +6,7 @@
   --paper-deep: #efe9dd;
   --ink: #171310;
   --ink-soft: #514b42;
-  --ink-faint: #7a7469;
+  --ink-faint: #6f6a5f;
   --line: #d9d3c7;
   --accent: #b0442c; /* editorial vermilion */
   --accent-ink: #7c2e1d;
@@ -113,6 +113,20 @@ body::after {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-faint);
+}
+
+/* Japanese eyebrow. The 0.24em tracking is tuned for Latin small caps; on a
+   two-character Japanese label it reads as a stray space ("学 歴"). Same size,
+   weight and colour — only the tracking relaxes. Use alongside .eyebrow. */
+.eyebrow-ja {
+  letter-spacing: 0.08em;
+}
+
+/* Keyboard focus. One global ring so every link/button in the page shows the
+   same mark instead of each component opting in. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 /* Japanese text: allow natural per-character wrapping but apply strict kinsoku

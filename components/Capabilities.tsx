@@ -16,12 +16,11 @@ export default function Capabilities({ lang }: { lang: Lang }) {
       tone="deep"
     >
       <div className="grid gap-x-12 gap-y-7 md:grid-cols-2">
+        {/* An odd last item stays in the left column at half width. Spanning
+            both columns stretched its rule across the grid and made it read as
+            a heading rather than a peer. */}
         {site.capabilities.items.map((item, i) => (
-          <Reveal
-            key={i}
-            delay={(i % 2) * 0.08}
-            className={i === site.capabilities.items.length - 1 && i % 2 === 0 ? "md:col-span-2" : ""}
-          >
+          <Reveal key={i} delay={(i % 2) * 0.08}>
             <div className="border-t border-line pt-4">
               <div className="display text-[2rem] leading-none text-ink-faint/60 tabular-nums">
                 {String(i + 1).padStart(2, "0")}

@@ -79,6 +79,8 @@ export const site = {
     ja: "科学者 / マジシャン / 体験製作者",
     en: "Scientist / Magician / Experience Maker",
   },
+  // ヒーロー下部の所在地。日英で表記が同じなので L10n にしない。
+  location: "Kyoto, Japan — 35.01°N 135.77°E",
   intro: {
     ja: "京都大学大学院で宇宙物理学を研究し、査読論文を筆頭著者として発表。その分析的な進め方を土台に、Webサイトやコンテンツの制作、マジックによる表現に取り組んでいます。",
     en: "I studied astrophysics at the Kyoto University Graduate School and published peer-reviewed papers as first author. I bring that same analytical approach to web and content production, and to performance as a magician.",
@@ -91,10 +93,10 @@ export const site = {
       ja: "体験型コンテンツの製作（日本語・英語）や、企業向けにR&D（画像認識AIの構築や、データ基盤の構築）を行なっています。",
       en: "I create experiential content (in Japanese and English) and carry out R&D for companies — building image-recognition AI and data infrastructure.",
     },
-    // 自己紹介（出身・歩み・人となり）
+    // 自己紹介（出身・歩み・人となり）。空行（\n\n）が段落の区切りになる。
     personal: {
-      ja: "鹿児島で生まれ、幼稚園の4年間をインドネシア・スラバヤで、小学校のうち3年間は同級生もいないような離島で過ごしました。中学から鹿児島ラ・サール中学・高校へ進み、京都大学理学部へ。大学時代はマジックにのめり込み、マジックバーに出演したり、コンテストに出たりしていました。大学院では宇宙物理学の研究に没頭し、超巨大ブラックホールの光度変動に関する研究で博士号を取得しました。学位を取った後は旅に出ながら特別研究員として研究を続けました。現在は生成AIに惚れ込んで毎日使い込みながら、マジック・ものづくり・経営・R&Dと、興味の向くままに手を動かしています。物理の研究のような緻密な議論も、マジック製作のように自由に試行錯誤するような大胆な発想も、両方とも好きです。",
-      en: "Born in Kagoshima, I spent four years of kindergarten in Surabaya, Indonesia, and three years of elementary school on a remote island with no classmates my age. From junior high I attended Kagoshima La Salle Junior and Senior High School, then went on to the Faculty of Science at Kyoto University. As an undergraduate I threw myself into magic, performing at magic bars and entering contests. In graduate school I immersed myself in astrophysics, earning my PhD with research on the luminosity variations of supermassive black holes. After earning my degree, I continued my research as a research fellow while traveling. These days I am in love with generative AI, using it every day, while following my curiosity across magic, making things, business, and R&D. I enjoy both the rigorous reasoning of physics research and the bold ideas that come from experimenting freely, the way I do when creating magic.",
+      ja: "鹿児島で生まれ、幼稚園の4年間をインドネシア・スラバヤで、小学校のうち3年間は同級生もいないような離島で過ごしました。中学から鹿児島ラ・サール中学・高校へ進み、京都大学理学部へ。\n\n大学時代はマジックにのめり込み、マジックバーに出演したり、コンテストに出たりしていました。大学院では宇宙物理学の研究に没頭し、超巨大ブラックホールの光度変動に関する研究で博士号を取得しました。学位を取った後は旅に出ながら特別研究員として研究を続けました。\n\n現在は生成AIに惚れ込んで毎日使い込みながら、マジック・ものづくり・経営・R&Dと、興味の向くままに手を動かしています。物理の研究のような緻密な議論も、マジック製作のように自由に試行錯誤するような大胆な発想も、両方とも好きです。",
+      en: "Born in Kagoshima, I spent four years of kindergarten in Surabaya, Indonesia, and three years of elementary school on a remote island with no classmates my age. From junior high I attended Kagoshima La Salle Junior and Senior High School, then went on to the Faculty of Science at Kyoto University.\n\nAs an undergraduate I threw myself into magic, performing at magic bars and entering contests. In graduate school I immersed myself in astrophysics, earning my PhD with research on the luminosity variations of supermassive black holes. After earning my degree, I continued my research as a research fellow while traveling.\n\nThese days I am in love with generative AI, using it every day, while following my curiosity across magic, making things, business, and R&D. I enjoy both the rigorous reasoning of physics research and the bold ideas that come from experimenting freely, the way I do when creating magic.",
     },
   },
 
@@ -103,7 +105,7 @@ export const site = {
   capabilities: {
     heading: { ja: "できること", en: "Capabilities" },
     lead: {
-      ja: "お仕事の依頼を検討してる方向け",
+      ja: "お仕事の依頼を検討している方へ",
       en: "For those considering working with me",
     },
     items: [
@@ -590,6 +592,20 @@ export const site = {
     },
     viewMore: { ja: "詳しく", en: "View" },
     scroll: { ja: "スクロール", en: "Scroll" },
+    // ヒーロー
+    heroEyebrow: { ja: "個人サイト", en: "Personal Site" },
+    heroEyebrowTail: "Portfolio & CV", // 日英共通のラテン部分
+    index: { ja: "目次", en: "Index" },
+    // ヘッダー
+    menu: { ja: "メニュー", en: "Menu" },
+    // Works / CV
+    citations: { ja: "被引用数", en: "Citations" },
+    ongoing: { ja: "運営中", en: "Ongoing" },
+    // Blog
+    readOnNote: { ja: "note で記事を読む", en: "Read on note" },
+    allPostsOnNote: { ja: "note で全記事を見る", en: "All posts on note" },
+    // Contact
+    backToTop: { ja: "↑ 上へ", en: "↑ Top" },
   },
 
   cvKindLabel: {

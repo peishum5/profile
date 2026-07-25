@@ -9,3 +9,6 @@
   現状はプレースホルダー。`content/site.ts` を編集して差し替える。
 - Next.js 16 (App Router) + Tailwind v4。DB・APIルートなし。
 - デプロイ: GitHub push → Vercel。
+
+## デザイン
+見た目に関わる作業の前に `DESIGN.md` を必ず読むこと。

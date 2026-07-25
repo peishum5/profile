@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LANGS, site, type Lang } from "@/content/site";
+import { eyebrow } from "@/lib/ui";
 
 // ♠♡♢♧ を正しい順に辿った人だけが招かれる隠しページ。
 // ナビには載せず、検索エンジンにも載せない（ただし静的サイトなので
@@ -46,7 +47,10 @@ export default async function SecretPage({
       <p className="mt-8 font-serif italic text-ink-faint">
         {t.signature[lang]}
       </p>
-      <Link href={`/${lang}/`} className="cta-link eyebrow mt-14 transition-colors hover:text-accent">
+      <Link
+        href={`/${lang}/`}
+        className={eyebrow(lang, "cta-link mt-14 transition-colors hover:text-accent")}
+      >
         {t.back[lang]} →
       </Link>
     </main>
