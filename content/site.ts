@@ -21,7 +21,7 @@ export type ResearchItem = {
 };
 
 // 成果物の小カテゴリ
-export type WorkGroup = "research" | "magic" | "service" | "other";
+export type WorkGroup = "research" | "magic" | "service" | "book" | "other";
 
 export type WorkItem = {
   group: WorkGroup;
@@ -295,8 +295,8 @@ export const site = {
   works: {
     heading: { ja: "成果物", en: "Works" },
     lead: {
-      ja: "これまでの成果を、研究・マジック・サービスに分けてまとめています。",
-      en: "My output, grouped into research, magic, and services.",
+      ja: "これまでの成果を、研究・マジック・サービス・著書に分けてまとめています。",
+      en: "My output, grouped into research, magic, services, and books.",
     },
     items: [
       // --- サービス service（運営中の事業・提供中のサービス） ---
@@ -376,6 +376,44 @@ export const site = {
           en: "An exploration-based web ARG — follow a magic bar's site, piece together the clues, and uncover the truth.",
         },
         link: "https://note.com/ryutaro_akashi/n/n4a9c16afc7d2",
+      },
+
+      // --- 著書 book（Kindle 出版。新しい順） ---
+      // タイトルは Amazon の商品名を正とする。日本語の本は英語ページでも
+      // 原題のまま出し、内容を英語の要約で補う（勝手な英題を作らない）。
+      {
+        group: "book" as WorkGroup,
+        year: "2026",
+        title: {
+          ja: "AIエージェント導入、最初の一歩",
+          en: "AIエージェント導入、最初の一歩",
+        },
+        meta: {
+          ja: "Kindle・日本語／2026年7月",
+          en: "Kindle · in Japanese / July 2026",
+        },
+        summary: {
+          ja: "中小企業の経営者向けに、生成AIを「便利な道具」から「働く仕組み」に変えるまでの手順をまとめた一冊。最初に任せる業務の選び方、AIへの指示書の書き方、情報漏洩を防ぐ線引き、社内に根づかせる回し方を、30分で読み切れる形に整理した。",
+          en: "A short book for owners of small businesses on turning generative AI from a handy tool into a working system — choosing the first task to delegate, writing the brief, drawing the line on information security, and making it stick.",
+        },
+        link: "https://www.amazon.co.jp/dp/B0HBKJZD7M",
+      },
+      {
+        group: "book" as WorkGroup,
+        year: "2026",
+        title: {
+          ja: "Don't Be That Tourist: Japanese Etiquette for Travelers, Explained by a Kyoto Tour Guide",
+          en: "Don't Be That Tourist: Japanese Etiquette for Travelers, Explained by a Kyoto Tour Guide",
+        },
+        meta: {
+          ja: "Kindle・英語／2026年7月",
+          en: "Kindle · in English / July 2026",
+        },
+        summary: {
+          ja: "京都でツアーを運営する立場から、訪日旅行者に向けて日本の作法を英語で解説した一冊。しきたりを「本当に迷惑になること」「気づかれるが誰も言わないこと」「実は誰も気にしていないこと」の三段階に仕分けし、49点の線画とともに理由から説明する。",
+          en: "An etiquette guide for visitors to Japan, written by a working Kyoto tour guide. Every custom is sorted into three temperatures — what causes a real problem, what people quietly notice, and what nobody minds at all — explained with reasons and 49 line illustrations.",
+        },
+        link: "https://www.amazon.co.jp/dp/B0HBMVHT82",
       },
     ] as WorkItem[],
   },
@@ -619,6 +657,7 @@ export const site = {
     research: { ja: "研究", en: "Research" },
     magic: { ja: "マジック", en: "Magic" },
     service: { ja: "サービス", en: "Services" },
+    book: { ja: "著書", en: "Books" },
     other: { ja: "その他", en: "Other" },
   } as Record<WorkGroup, L10n>,
 } as const;

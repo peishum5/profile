@@ -39,6 +39,7 @@ function GroupHeading({
 export default function Works({ lang }: { lang: Lang }) {
   const { scholar } = site.research;
   const service = site.works.items.filter((w) => w.group === "service");
+  const books = site.works.items.filter((w) => w.group === "book");
   const quote = site.magic.quote;
 
   const scholarMeta = (
@@ -159,6 +160,22 @@ export default function Works({ lang }: { lang: Lang }) {
             label={item.meta ? item.meta[lang] : item.year}
             title={item.title[lang]}
             href={item.link}
+            body={item.summary[lang]}
+          />
+        ))}
+      </div>
+
+      {/* 著書 */}
+      <GroupHeading index="03.4" label={site.workGroupLabel.book[lang]} />
+      <div>
+        {books.map((item, i) => (
+          <Entry
+            key={`b${i}`}
+            delay={i * 0.03}
+            label={item.year}
+            title={item.title[lang]}
+            href={item.link}
+            meta={item.meta ? item.meta[lang] : undefined}
             body={item.summary[lang]}
           />
         ))}
