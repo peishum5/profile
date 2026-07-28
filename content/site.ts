@@ -402,6 +402,23 @@ export const site = {
         group: "book" as WorkGroup,
         year: "2026",
         title: {
+          ja: "AI Agents: The First Step: For Small Businesses — How to Turn ChatGPT and Claude from a Handy Tool into a System That Works",
+          en: "AI Agents: The First Step: For Small Businesses — How to Turn ChatGPT and Claude from a Handy Tool into a System That Works",
+        },
+        meta: {
+          ja: "Kindle・英語／2026年7月",
+          en: "Kindle · in English / July 2026",
+        },
+        summary: {
+          ja: "『AIエージェント導入、最初の一歩』の英語版。海外の中小企業経営者に向けて、ChatGPTやClaudeを「便利な道具」から「働く仕組み」に変えるまでの手順をまとめた。",
+          en: "The English edition of \"AIエージェント導入、最初の一歩\" — for owners of small businesses, the steps that turn ChatGPT and Claude from a handy tool into a system that works: choosing the first task to delegate, writing the brief, drawing the line on information security, and making it stick.",
+        },
+        link: "https://www.amazon.co.jp/dp/B0HBPZ9W8P",
+      },
+      {
+        group: "book" as WorkGroup,
+        year: "2026",
+        title: {
           ja: "Don't Be That Tourist: Japanese Etiquette for Travelers, Explained by a Kyoto Tour Guide",
           en: "Don't Be That Tourist: Japanese Etiquette for Travelers, Explained by a Kyoto Tour Guide",
         },
