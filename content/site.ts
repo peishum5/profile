@@ -646,8 +646,8 @@ export const site = {
   secret: {
     unlocked: { ja: "…お見事。", en: "…Well done." },
     heading: {
-      ja: "見えないものを、見ようとして。",
-      en: "Trying to see the unseen.",
+      ja: "まだ、誰も見ていない先へ。",
+      en: "Toward what no one has seen yet.",
     },
     // 装置を全部たどると fragments が順に刻まれる。ここは JS 無効時などに
     // 出す全文なので、fragments を繋いだものと同じ内容にしておく。
@@ -704,8 +704,9 @@ export const site = {
           ja: "暗い領域を撫でると、歪みの中にだけ文字が浮かぶ。矢印キーでも動かせる。",
           en: "Sweep the dark field. Letters surface only inside the distortion. Arrow keys work too.",
         },
-        /** ⚠ 場に伏せておく語。1文字ずつ観測するので、6〜10字くらいが遊びやすい。 */
-        hidden: { ja: "みえないもの", en: "THE UNSEEN" },
+        /** 場に伏せておく語。1文字ずつ観測するので、4〜10字くらいが遊びやすい。
+         *  レンズで「不可能」を暴いてから、詩の一行目に入る流れにしてある。 */
+        hidden: { ja: "ふかのう", en: "IMPOSSIBLE" },
       },
       orbit: {
         label: { ja: "第二の装置 — 投擲", en: "Device II — The Toss" },
