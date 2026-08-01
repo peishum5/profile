@@ -369,6 +369,28 @@ export const site = {
       {
         group: "service" as WorkGroup,
         year: "",
+        title: { ja: "星測所", en: "Seisokujo" },
+        meta: { ja: "占い・宇宙", en: "Fortune / Space" },
+        summary: {
+          ja: "「宇宙は、今日もあなたを見ている。」創作の星占いではなく、太陽フレアや地磁気といった今この瞬間の宇宙の実測値と、生まれた瞬間の空の天体位置から読む占い。",
+          en: "\"The universe is watching you today, too.\" Not invented astrology — readings drawn from live space-weather measurements (solar flares, geomagnetic activity) and the actual sky at the moment you were born.",
+        },
+        link: "https://seisokujo.vercel.app",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "マギシステム", en: "MAGI SYSTEM" },
+        meta: { ja: "意思決定ツール", en: "Decision Tool" },
+        summary: {
+          ja: "迷いごとを「〜する」の形で入力すると、性格の異なる3基のAIがそれぞれ独立に判定し、多数決で結論を出す。それぞれの判定理由も読める。",
+          en: "State your dilemma as a single proposition, and three AIs with distinct temperaments judge it independently, settling it by majority vote — each with its reasoning laid out.",
+        },
+        link: "https://magisystem.app/",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
         title: { ja: "Magic Bar ENCORE", en: "Magic Bar ENCORE" },
         meta: { ja: "ARG", en: "ARG" },
         summary: {
