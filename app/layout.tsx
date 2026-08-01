@@ -64,6 +64,11 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
+      // /secret は本文より前の同期スクリプトで <html> に data-secret を立て、
+      // 紙のページが一瞬見えてから暗転するのを防いでいる。React から見ると
+      // サーバーHTMLとの差分になるため、この要素の属性差分だけ黙らせる
+      // （子要素には波及しない。next-themes 等と同じ定石）。
+      suppressHydrationWarning
       className={`${instrument.variable} ${cormorant.variable} ${shippori.variable} ${zenKaku.variable}`}
     >
       <body>

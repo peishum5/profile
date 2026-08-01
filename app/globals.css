@@ -12,6 +12,11 @@
   --accent-ink: #7c2e1d;
   --accent-wash: rgba(176, 68, 44, 0.07);
 
+  /* 宇宙の黒 — 隠しページ /secret 専用。--ink は茶に寄っていて宇宙にならない。
+     表のページでは一切使わない（DESIGN.md「例外領域: /secret」参照）。 */
+  --void: #05070a;
+  --void-soft: #0d1016;
+
   /* font stacks — defined as real custom properties so both Tailwind utilities
      (via @theme inline) and the hand-written classes below resolve them.
      --font-instrument / --font-shippori / --font-zen-kaku are injected by
@@ -32,6 +37,8 @@
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
   --color-accent-wash: var(--accent-wash);
+  --color-void: var(--void);
+  --color-void-soft: var(--void-soft);
 
   --font-display: var(--stack-display);
   --font-serif: var(--stack-serif);

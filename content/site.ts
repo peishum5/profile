@@ -369,6 +369,28 @@ export const site = {
       {
         group: "service" as WorkGroup,
         year: "",
+        title: { ja: "星測所", en: "Seisokujo" },
+        meta: { ja: "占い・宇宙", en: "Fortune / Space" },
+        summary: {
+          ja: "「宇宙は、今日もあなたを見ている。」創作の星占いではなく、太陽フレアや地磁気といった今この瞬間の宇宙の実測値と、生まれた瞬間の空の天体位置から読む占い。",
+          en: "\"The universe is watching you today, too.\" Not invented astrology — readings drawn from live space-weather measurements (solar flares, geomagnetic activity) and the actual sky at the moment you were born.",
+        },
+        link: "https://seisokujo.vercel.app",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "マギシステム", en: "MAGI SYSTEM" },
+        meta: { ja: "意思決定ツール", en: "Decision Tool" },
+        summary: {
+          ja: "迷いごとを「〜する」の形で入力すると、性格の異なる3基のAIがそれぞれ独立に判定し、多数決で結論を出す。それぞれの判定理由も読める。",
+          en: "State your dilemma as a single proposition, and three AIs with distinct temperaments judge it independently, settling it by majority vote — each with its reasoning laid out.",
+        },
+        link: "https://magisystem.app/",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
         title: { ja: "Magic Bar ENCORE", en: "Magic Bar ENCORE" },
         meta: { ja: "ARG", en: "ARG" },
         summary: {
@@ -624,15 +646,83 @@ export const site = {
   secret: {
     unlocked: { ja: "…お見事。", en: "…Well done." },
     heading: {
-      ja: "見えないものを、見ようとして。",
-      en: "Trying to see the unseen.",
+      ja: "まだ、誰も見ていない先へ。",
+      en: "Toward what no one has seen yet.",
     },
+    // 装置を全部たどると fragments が順に刻まれる。ここは JS 無効時などに
+    // 出す全文なので、fragments を繋いだものと同じ内容にしておく。
     body: {
-      ja: "マジックも、物理の研究も、\n私にとっては同じことでした。\n宇宙の果てのかすかな光の揺らぎも、\n目の前で消えたコインも、\n“ある”のに見えていないだけ。\n\nこの小さな謎を解いたあなたも、\nたぶん、同じ目をしている。",
-      en: "For me, magic and physics were always the same thing.\nThe faint flicker of light from the far edge of the universe,\nand a coin vanishing in your hand —\nboth are there, only unseen.\n\nYou solved this little riddle,\nso perhaps you have the same eyes.",
+      ja: "不可能に思えることを、\n実現してきたのが人類。\n\nそんな人類の歴史を\n積み上げることが、僕の夢です。",
+      en: "What looked impossible,\nhumanity has made real.\n\nTo add to that history of ours\nis my dream.",
     },
     signature: { ja: "— 俊平", en: "— Shumpei" },
     back: { ja: "表紙へ戻る", en: "Back to the cover" },
+
+    // --- 隠しページの演出・装置（ミニゲーム）用の文言 -------------------------
+    begin: { ja: "観測を開始する", en: "Begin observation" },
+    beginHint: { ja: "クリック、または Enter", en: "Click, or press Enter" },
+    /** 装置を飛ばして先へ進む導線。遊べない人が詩を読めない状態を作らないための逃げ道。 */
+    skip: { ja: "…先へ進む", en: "…Move on" },
+    cleared: { ja: "観測成功", en: "Observed" },
+    /** タイプ中の詩を一気に表示する */
+    revealAll: { ja: "クリックで全文", en: "Tap to reveal" },
+
+    /** 装置をひとつクリアするたびに刻まれる詩の断片。
+     *  順に 装置I → II → III に対応。行数は自由（\n で改行）。
+     *  書き換えるときは上の body（全文）も揃えること。 */
+    fragments: [
+      {
+        ja: "不可能に思えることを、",
+        en: "What looked impossible,",
+      },
+      {
+        ja: "実現してきたのが人類。",
+        en: "humanity has made real.",
+      },
+      {
+        ja: "そんな人類の歴史を\n積み上げることが、僕の夢です。",
+        en: "To add to that history of ours\nis my dream.",
+      },
+    ],
+
+    /** 装置の状態表示。読み上げ（aria-live）にも使うので短く保つ。
+     *  .eyebrow が大文字化するので、単位のラテン小文字（s など）は使わない。 */
+    status: {
+      observing: { ja: "観測中…", en: "Observing…" },
+      fell: { ja: "落下", en: "Lost to the hole" },
+      strayed: { ja: "見失った", en: "Drifted away" },
+      hold: { ja: "保持", en: "Held" }, // 「保持 3.0 / 6.0」
+      align: { ja: "整合", en: "Match" }, // 「整合 62%」
+      observed: { ja: "観測", en: "Found" }, // 「観測 3 / 6」
+    },
+
+    /** 3つの装置のラベル・操作説明。装置の実装は components/secret/games/ */
+    devices: {
+      lens: {
+        label: { ja: "第一の装置 — 重力レンズ", en: "Device I — Gravitational Lens" },
+        hint: {
+          ja: "暗い領域を撫でると、歪みの中にだけ文字が浮かぶ。矢印キーでも動かせる。",
+          en: "Sweep the dark field. Letters surface only inside the distortion. Arrow keys work too.",
+        },
+        /** 場に伏せておく語。1文字ずつ観測するので、4〜10字くらいが遊びやすい。
+         *  レンズで「不可能」を暴いてから、詩の一行目に入る流れにしてある。 */
+        hidden: { ja: "ふかのう", en: "IMPOSSIBLE" },
+      },
+      orbit: {
+        label: { ja: "第二の装置 — 投擲", en: "Device II — The Toss" },
+        hint: {
+          ja: "ドラッグして星を放つ。落ちも飛び去りもしない軌道に乗せる。",
+          en: "Drag to release a star. Find an orbit that neither falls nor escapes.",
+        },
+      },
+      redshift: {
+        label: { ja: "第三の装置 — 赤方偏移", en: "Device III — Redshift" },
+        hint: {
+          ja: "波長を合わせる。ノイズが引くと、信号が読める。",
+          en: "Tune the wavelength. When the noise recedes, the signal can be read.",
+        },
+      },
+    },
   },
 
   // --- UI 文言 ----------------------------------------------------------------
