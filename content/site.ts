@@ -389,6 +389,19 @@ export const site = {
         link: "https://magisystem.app/",
       },
       {
+        // ⚠ アプリ名は App Store 上の表記を正とする。日本語名へ改称したら
+        //   title と（必要なら）summary の呼び方も差し替える。
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "Inori Message", en: "Inori Message" },
+        meta: { ja: "iOSアプリ・SNS", en: "iOS App / Social" },
+        summary: {
+          ja: "神社の世界観で願いごとを分かち合うiOSアプリ。賽銭を投げて願いを流すと参道のタイムラインに流れ、見知らぬ参拝者から「祈り」が返ってくる。登録不要・無料。",
+          en: "An iOS app for sharing wishes in the world of a Shinto shrine. Toss a coin to send a wish down the timeline, and strangers passing through send prayers back. No sign-up, free to use.",
+        },
+        link: "https://apps.apple.com/jp/app/id6791019626",
+      },
+      {
         group: "service" as WorkGroup,
         year: "",
         title: { ja: "Magic Bar ENCORE", en: "Magic Bar ENCORE" },
