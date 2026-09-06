@@ -643,7 +643,7 @@ export const site = {
       ja: "お問い合わせ・ご依頼はこちらから。",
       en: "For inquiries and requests, reach me here.",
     },
-    email: "shumpei.nagoshi@cosmic-magic.com",
+    email: "shumpei.nagoshi@gmail.com",
     // フッターに小さく載せるSNSリンク（連絡先本体はメールのみ）。
     socials: [
       { label: "X", url: "https://x.com/peishum5" },
