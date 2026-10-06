@@ -333,17 +333,18 @@ export const site = {
         },
         link: "https://message-coffee.vercel.app",
       },
-      {
-        group: "service" as WorkGroup,
-        year: "",
-        title: { ja: "ImmersiveNavi", en: "ImmersiveNavi" },
-        meta: { ja: "体験・エンタメ", en: "Experience" }, // ⚠ 説明はざっくり。調整可
-        summary: {
-          ja: "イマーシブシアターやARG（代替現実ゲーム）といった没入型体験を扱うサービス。",
-          en: "A service for immersive theater and ARG (alternate reality game) experiences.",
-        },
-        link: "https://www.immersivenavi.com/",
-      },
+      // 【サービス一時停止中のため非表示 2026-10】ImmersiveNavi。再開時はコメントを外す
+      // {
+      //   group: "service" as WorkGroup,
+      //   year: "",
+      //   title: { ja: "ImmersiveNavi", en: "ImmersiveNavi" },
+      //   meta: { ja: "体験・エンタメ", en: "Experience" }, // ⚠ 説明はざっくり。調整可
+      //   summary: {
+      //     ja: "イマーシブシアターやARG（代替現実ゲーム）といった没入型体験を扱うサービス。",
+      //     en: "A service for immersive theater and ARG (alternate reality game) experiences.",
+      //   },
+      //   link: "https://www.immersivenavi.com/",
+      // },
       {
         group: "service" as WorkGroup,
         year: "",
