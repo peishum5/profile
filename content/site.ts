@@ -355,28 +355,29 @@ export const site = {
         },
         link: "https://hazecoffee.sub.jp",
       },
-      {
-        group: "service" as WorkGroup,
-        year: "",
-        title: { ja: "呪 -NOROI-", en: "NOROI" },
-        meta: { ja: "エンタメ", en: "Entertainment" },
-        summary: {
-          ja: "「その恨み、代わりに呪います」。藁人形に五寸釘を打ち込むオンラインの呪い代行。鬱憤を奉納するデジタル儀式を娯楽として提供する。",
-          en: "\"Your grudge, cursed on your behalf.\" An online curse-by-proxy — drive nails into a digital straw doll, a ritual offered as entertainment.",
-        },
-        link: "https://noroiya.com",
-      },
-      {
-        group: "service" as WorkGroup,
-        year: "",
-        title: { ja: "星測所", en: "Seisokujo" },
-        meta: { ja: "占い・宇宙", en: "Fortune / Space" },
-        summary: {
-          ja: "「宇宙は、今日もあなたを見ている。」創作の星占いではなく、太陽フレアや地磁気といった今この瞬間の宇宙の実測値と、生まれた瞬間の空の天体位置から読む占い。",
-          en: "\"The universe is watching you today, too.\" Not invented astrology — readings drawn from live space-weather measurements (solar flares, geomagnetic activity) and the actual sky at the moment you were born.",
-        },
-        link: "https://seisokujo.vercel.app",
-      },
+      // 【サービス一時停止中のため非表示 2026-10】呪 -NOROI- / 星測所。再開時はコメントを外す
+      // {
+      //   group: "service" as WorkGroup,
+      //   year: "",
+      //   title: { ja: "呪 -NOROI-", en: "NOROI" },
+      //   meta: { ja: "エンタメ", en: "Entertainment" },
+      //   summary: {
+      //     ja: "「その恨み、代わりに呪います」。藁人形に五寸釘を打ち込むオンラインの呪い代行。鬱憤を奉納するデジタル儀式を娯楽として提供する。",
+      //     en: "\"Your grudge, cursed on your behalf.\" An online curse-by-proxy — drive nails into a digital straw doll, a ritual offered as entertainment.",
+      //   },
+      //   link: "https://noroiya.com",
+      // },
+      // {
+      //   group: "service" as WorkGroup,
+      //   year: "",
+      //   title: { ja: "星測所", en: "Seisokujo" },
+      //   meta: { ja: "占い・宇宙", en: "Fortune / Space" },
+      //   summary: {
+      //     ja: "「宇宙は、今日もあなたを見ている。」創作の星占いではなく、太陽フレアや地磁気といった今この瞬間の宇宙の実測値と、生まれた瞬間の空の天体位置から読む占い。",
+      //     en: "\"The universe is watching you today, too.\" Not invented astrology — readings drawn from live space-weather measurements (solar flares, geomagnetic activity) and the actual sky at the moment you were born.",
+      //   },
+      //   link: "https://seisokujo.vercel.app",
+      // },
       {
         group: "service" as WorkGroup,
         year: "",
@@ -388,19 +389,20 @@ export const site = {
         },
         link: "https://magisystem.app/",
       },
-      {
-        // ⚠ アプリ名は App Store 上の表記を正とする。日本語名へ改称したら
-        //   title と（必要なら）summary の呼び方も差し替える。
-        group: "service" as WorkGroup,
-        year: "",
-        title: { ja: "Inori Message", en: "Inori Message" },
-        meta: { ja: "iOSアプリ・SNS", en: "iOS App / Social" },
-        summary: {
-          ja: "神社の世界観で願いごとを分かち合うiOSアプリ。賽銭を投げて願いを流すと参道のタイムラインに流れ、見知らぬ参拝者から「祈り」が返ってくる。登録不要・無料。",
-          en: "An iOS app for sharing wishes in the world of a Shinto shrine. Toss a coin to send a wish down the timeline, and strangers passing through send prayers back. No sign-up, free to use.",
-        },
-        link: "https://apps.apple.com/jp/app/id6791019626",
-      },
+      // 【サービス一時停止中のため非表示 2026-10】おてがみ神社（Inori Message）。再開時はコメントを外す
+      // {
+      //   // ⚠ アプリ名は App Store 上の表記を正とする。日本語名へ改称したら
+      //   //   title と（必要なら）summary の呼び方も差し替える。
+      //   group: "service" as WorkGroup,
+      //   year: "",
+      //   title: { ja: "Inori Message", en: "Inori Message" },
+      //   meta: { ja: "iOSアプリ・SNS", en: "iOS App / Social" },
+      //   summary: {
+      //     ja: "神社の世界観で願いごとを分かち合うiOSアプリ。賽銭を投げて願いを流すと参道のタイムラインに流れ、見知らぬ参拝者から「祈り」が返ってくる。登録不要・無料。",
+      //     en: "An iOS app for sharing wishes in the world of a Shinto shrine. Toss a coin to send a wish down the timeline, and strangers passing through send prayers back. No sign-up, free to use.",
+      //   },
+      //   link: "https://apps.apple.com/jp/app/id6791019626",
+      // },
       {
         group: "service" as WorkGroup,
         year: "",
