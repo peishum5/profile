@@ -554,6 +554,18 @@ export const site = {
       },
       // --- 職歴 career ---
       {
+        year: "2026",
+        title: {
+          ja: "株式会社Cosmic Magic 退任",
+          en: "Left Cosmic Magic Inc.",
+        },
+        detail: {
+          ja: "2026年8月 退任。",
+          en: "Left in August 2026.",
+        },
+        kind: "career",
+      },
+      {
         year: "2024",
         title: {
           ja: "株式会社Cosmic Magic 設立",
