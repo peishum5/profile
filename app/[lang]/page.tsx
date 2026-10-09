@@ -38,10 +38,6 @@ export default async function Page({
       "@type": "CollegeOrUniversity",
       name: lang === "ja" ? "京都大学" : "Kyoto University",
     },
-    worksFor: {
-      "@type": "Organization",
-      name: lang === "ja" ? "株式会社Cosmic Magic" : "Cosmic Magic Inc.",
-    },
     sameAs: [
       ...site.contact.socials.map((s) => s.url),
       site.research.scholar.url,
