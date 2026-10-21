@@ -26,8 +26,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      # メンテナンス中（リポジトリ変数 MAINTENANCE=true）はビルドせず maintenance/ を公開する
+      - name: Publish maintenance page
+        if: vars.MAINTENANCE == 'true'
+        run: mkdir -p out && cp maintenance/* out/
       - run: npm ci
+        if: vars.MAINTENANCE != 'true'
       - name: Build (static export)
+        if: vars.MAINTENANCE != 'true'
         run: npm run build
         env:
           GITHUB_PAGES: "true"
