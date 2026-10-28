@@ -38,7 +38,12 @@ function GroupHeading({
 
 export default function Works({ lang }: { lang: Lang }) {
   const { scholar } = site.research;
-  const service = site.works.items.filter((w) => w.group === "service");
+  const service = site.works.items.filter(
+    (w) => w.group === "service" && !w.paused,
+  );
+  const paused = site.works.items.filter(
+    (w) => w.group === "service" && w.paused,
+  );
   const books = site.works.items.filter((w) => w.group === "book");
   const quote = site.magic.quote;
 
@@ -164,6 +169,31 @@ export default function Works({ lang }: { lang: Lang }) {
           />
         ))}
       </div>
+      {/* メンテナンス中・一時停止中: 既定でたたむ。リンク先が停止中なので href は渡さない */}
+      {paused.length > 0 && (
+        <details className="group border-t border-line">
+          <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 py-4 text-sm text-ink-faint transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
+            <span>
+              {site.ui.pausedServices[lang]}
+              <span className="ml-2 tabular-nums">({paused.length})</span>
+            </span>
+            <span aria-hidden className="tabular-nums">
+              <span className="group-open:hidden">+</span>
+              <span className="hidden group-open:inline">−</span>
+            </span>
+          </summary>
+          <div>
+            {paused.map((item, i) => (
+              <Entry
+                key={`sp${i}`}
+                label={item.meta ? item.meta[lang] : item.year}
+                title={item.title[lang]}
+                body={item.summary[lang]}
+              />
+            ))}
+          </div>
+        </details>
+      )}
 
       {/* 著書 */}
       <GroupHeading index="03.4" label={site.workGroupLabel.book[lang]} />

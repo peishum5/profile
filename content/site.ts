@@ -30,6 +30,9 @@ export type WorkItem = {
   summary: L10n;
   meta?: L10n; // 補足（掲載誌・媒体など）
   link?: string;
+  // メンテナンス中・一時停止中。サービス欄の末尾にたたんで表示し、リンクは出さない。
+  // 再開したら外す。
+  paused?: boolean;
 };
 
 export type MagicItem = {
@@ -333,18 +336,19 @@ export const site = {
         },
         link: "https://message-coffee.vercel.app",
       },
-      // 【サービス一時停止中のため非表示 2026-10】ImmersiveNavi。再開時はコメントを外す
-      // {
-      //   group: "service" as WorkGroup,
-      //   year: "",
-      //   title: { ja: "ImmersiveNavi", en: "ImmersiveNavi" },
-      //   meta: { ja: "体験・エンタメ", en: "Experience" }, // ⚠ 説明はざっくり。調整可
-      //   summary: {
-      //     ja: "イマーシブシアターやARG（代替現実ゲーム）といった没入型体験を扱うサービス。",
-      //     en: "A service for immersive theater and ARG (alternate reality game) experiences.",
-      //   },
-      //   link: "https://www.immersivenavi.com/",
-      // },
+      // 一時停止中（2026-10〜）。再開時は paused を外す
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "ImmersiveNavi", en: "ImmersiveNavi" },
+        meta: { ja: "体験・エンタメ", en: "Experience" }, // ⚠ 説明はざっくり。調整可
+        summary: {
+          ja: "イマーシブシアターやARG（代替現実ゲーム）といった没入型体験を扱うサービス。",
+          en: "A service for immersive theater and ARG (alternate reality game) experiences.",
+        },
+        paused: true,
+        link: "https://www.immersivenavi.com/",
+      },
       {
         group: "service" as WorkGroup,
         year: "",
@@ -356,29 +360,31 @@ export const site = {
         },
         link: "https://hazecoffee.sub.jp",
       },
-      // 【サービス一時停止中のため非表示 2026-10】呪 -NOROI- / 星測所。再開時はコメントを外す
-      // {
-      //   group: "service" as WorkGroup,
-      //   year: "",
-      //   title: { ja: "呪 -NOROI-", en: "NOROI" },
-      //   meta: { ja: "エンタメ", en: "Entertainment" },
-      //   summary: {
-      //     ja: "「その恨み、代わりに呪います」。藁人形に五寸釘を打ち込むオンラインの呪い代行。鬱憤を奉納するデジタル儀式を娯楽として提供する。",
-      //     en: "\"Your grudge, cursed on your behalf.\" An online curse-by-proxy — drive nails into a digital straw doll, a ritual offered as entertainment.",
-      //   },
-      //   link: "https://noroiya.com",
-      // },
-      // {
-      //   group: "service" as WorkGroup,
-      //   year: "",
-      //   title: { ja: "星測所", en: "Seisokujo" },
-      //   meta: { ja: "占い・宇宙", en: "Fortune / Space" },
-      //   summary: {
-      //     ja: "「宇宙は、今日もあなたを見ている。」創作の星占いではなく、太陽フレアや地磁気といった今この瞬間の宇宙の実測値と、生まれた瞬間の空の天体位置から読む占い。",
-      //     en: "\"The universe is watching you today, too.\" Not invented astrology — readings drawn from live space-weather measurements (solar flares, geomagnetic activity) and the actual sky at the moment you were born.",
-      //   },
-      //   link: "https://seisokujo.vercel.app",
-      // },
+      // 一時停止中（2026-10〜）。再開時は paused を外す
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "呪 -NOROI-", en: "NOROI" },
+        meta: { ja: "エンタメ", en: "Entertainment" },
+        summary: {
+          ja: "「その恨み、代わりに呪います」。藁人形に五寸釘を打ち込むオンラインの呪い代行。鬱憤を奉納するデジタル儀式を娯楽として提供する。",
+          en: "\"Your grudge, cursed on your behalf.\" An online curse-by-proxy — drive nails into a digital straw doll, a ritual offered as entertainment.",
+        },
+        paused: true,
+        link: "https://noroiya.com",
+      },
+      {
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "星測所", en: "Seisokujo" },
+        meta: { ja: "占い・宇宙", en: "Fortune / Space" },
+        summary: {
+          ja: "「宇宙は、今日もあなたを見ている。」創作の星占いではなく、太陽フレアや地磁気といった今この瞬間の宇宙の実測値と、生まれた瞬間の空の天体位置から読む占い。",
+          en: "\"The universe is watching you today, too.\" Not invented astrology — readings drawn from live space-weather measurements (solar flares, geomagnetic activity) and the actual sky at the moment you were born.",
+        },
+        paused: true,
+        link: "https://seisokujo.vercel.app",
+      },
       {
         group: "service" as WorkGroup,
         year: "",
@@ -388,22 +394,24 @@ export const site = {
           ja: "迷いごとを「〜する」の形で入力すると、性格の異なる3基のAIがそれぞれ独立に判定し、多数決で結論を出す。それぞれの判定理由も読める。",
           en: "State your dilemma as a single proposition, and three AIs with distinct temperaments judge it independently, settling it by majority vote — each with its reasoning laid out.",
         },
+        paused: true, // メンテナンス中（2026-10-22〜）
         link: "https://magisystem.app/",
       },
-      // 【サービス一時停止中のため非表示 2026-10】おてがみ神社（Inori Message）。再開時はコメントを外す
-      // {
-      //   // ⚠ アプリ名は App Store 上の表記を正とする。日本語名へ改称したら
-      //   //   title と（必要なら）summary の呼び方も差し替える。
-      //   group: "service" as WorkGroup,
-      //   year: "",
-      //   title: { ja: "Inori Message", en: "Inori Message" },
-      //   meta: { ja: "iOSアプリ・SNS", en: "iOS App / Social" },
-      //   summary: {
-      //     ja: "神社の世界観で願いごとを分かち合うiOSアプリ。賽銭を投げて願いを流すと参道のタイムラインに流れ、見知らぬ参拝者から「祈り」が返ってくる。登録不要・無料。",
-      //     en: "An iOS app for sharing wishes in the world of a Shinto shrine. Toss a coin to send a wish down the timeline, and strangers passing through send prayers back. No sign-up, free to use.",
-      //   },
-      //   link: "https://apps.apple.com/jp/app/id6791019626",
-      // },
+      // 一時停止中（2026-10〜）。再開時は paused を外す
+      {
+        // ⚠ アプリ名は App Store 上の表記を正とする。日本語名へ改称したら
+        //   title と（必要なら）summary の呼び方も差し替える。
+        group: "service" as WorkGroup,
+        year: "",
+        title: { ja: "Inori Message", en: "Inori Message" },
+        meta: { ja: "iOSアプリ・SNS", en: "iOS App / Social" },
+        summary: {
+          ja: "神社の世界観で願いごとを分かち合うiOSアプリ。賽銭を投げて願いを流すと参道のタイムラインに流れ、見知らぬ参拝者から「祈り」が返ってくる。登録不要・無料。",
+          en: "An iOS app for sharing wishes in the world of a Shinto shrine. Toss a coin to send a wish down the timeline, and strangers passing through send prayers back. No sign-up, free to use.",
+        },
+        paused: true,
+        link: "https://apps.apple.com/jp/app/id6791019626",
+      },
       {
         group: "service" as WorkGroup,
         year: "",
@@ -485,6 +493,18 @@ export const site = {
     // quote: { text: { ja: "...", en: "..." }, source: { ja: "── 出典", en: "— Source" } }
     quote: null as null | { text: L10n; source: L10n },
     items: [
+      {
+        year: "2026",
+        title: { ja: "ブロンズ賞（パーラー部門）", en: "Bronze Prize (Parlor Division)" },
+        org: {
+          ja: "JCMA チャレンジャーズライブ 名古屋 2026",
+          en: "JCMA Challengers Live Nagoya 2026",
+        },
+        note: {
+          ja: "マジックのコンテスト。2026年10月11日。",
+          en: "A magic competition. October 11, 2026.",
+        },
+      },
       {
         year: "2022",
         title: { ja: "銀賞", en: "Silver Prize" },
@@ -787,6 +807,7 @@ export const site = {
     // Works / CV
     citations: { ja: "被引用数", en: "Citations" },
     ongoing: { ja: "運営中", en: "Ongoing" },
+    pausedServices: { ja: "メンテナンス中・一時停止中のサービス", en: "Paused & under maintenance" },
     // Blog
     readOnNote: { ja: "note で記事を読む", en: "Read on note" },
     allPostsOnNote: { ja: "note で全記事を見る", en: "All posts on note" },
