@@ -90,8 +90,8 @@ export const site = {
   about: {
     heading: { ja: "プロフィール", en: "Profile" },
     body: {
-      ja: "体験型コンテンツの製作（日本語・英語）や、企業向けにR&D（画像認識AIの構築や、データ基盤の構築）を行なっています。",
-      en: "I create experiential content (in Japanese and English) and carry out R&D for companies — building image-recognition AI and data infrastructure.",
+      ja: "京都の8E6株式会社 代表取締役。神社仏閣・祭・芸能を体験にするツアーやショーの制作（日本語・英語）と、それを支えるAI研修、企業向けのR&D（画像認識AIの構築や、データ基盤の構築）を行なっています。",
+      en: "CEO of 8E6 Inc. in Kyoto. I produce tours and shows that turn shrines, temples, festivals, and performing arts into experiences (in Japanese and English), and support them with AI training and R&D for companies — building image-recognition AI and data infrastructure.",
     },
     // 自己紹介（出身・歩み・人となり）。空行（\n\n）が段落の区切りになる。
     personal: {
@@ -553,6 +553,19 @@ export const site = {
         kind: "education",
       },
       // --- 職歴 career ---
+      {
+        year: "2026",
+        title: {
+          ja: "8E6株式会社 設立・代表取締役",
+          en: "Founded 8E6 Inc., CEO",
+        },
+        detail: {
+          ja: "2026年10月 京都で設立。神社仏閣・祭・芸能を体験にするツアーと催しの制作、AI研修・AI開発。",
+          en: "Founded in Kyoto in October 2026. Tours and events built around shrines, temples, festivals, and performing arts, plus AI training and development.",
+        },
+        kind: "career",
+        link: "https://8e6.co.jp/",
+      },
       {
         year: "2026",
         title: {

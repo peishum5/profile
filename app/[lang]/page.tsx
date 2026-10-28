@@ -34,6 +34,11 @@ export default async function Page({
     image: `${base}/portrait.jpg`,
     description: site.intro[lang],
     jobTitle: site.tagline[lang].split(" / "),
+    worksFor: {
+      "@type": "Organization",
+      name: lang === "ja" ? "8E6株式会社" : "8E6 Inc.",
+      url: "https://8e6.co.jp/",
+    },
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: lang === "ja" ? "京都大学" : "Kyoto University",
