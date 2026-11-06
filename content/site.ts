@@ -355,8 +355,8 @@ export const site = {
         title: { ja: "HAZE coffee", en: "HAZE coffee" },
         meta: { ja: "コーヒー・ARG", en: "Coffee / ARG" },
         summary: {
-          ja: "謎解きが付属したスペシャルティコーヒー。一杯に謎解き（ARG）を組み合わせ、「記憶に残る一杯」の体験をつくる。",
-          en: "Specialty coffee with a built-in puzzle — an ARG paired with a cup, for a brew you remember.",
+          ja: "謎解きが付属したスペシャルティコーヒー（ARG）。謎解き全般、SNS上での投稿画像制作全般、出演団体の運営を担当。",
+          en: "Specialty coffee paired with a puzzle-driven ARG. Responsible for all puzzle design, all images posted on social media, and the management of the performing group.",
         },
         link: "https://hazecoffee.sub.jp",
       },
